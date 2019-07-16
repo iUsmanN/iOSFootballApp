@@ -13,14 +13,45 @@
         <!--Gallery-->
         <scene sceneID="ZCm-C4-ozs">
             <objects>
-                <viewController id="2vc-vb-T8s" sceneMemberID="viewController">
+                <viewController id="2vc-vb-T8s" customClass="GalleryViewController" customModule="iOSTrainingProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sqc-ex-cYX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PCs-2m-tTd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kUg-Av-gP7">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hty-qu-2xO">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17399358409999999" green="1" blue="0.40827968050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iur-1Z-HE7" firstAttribute="bottom" secondItem="PCs-2m-tTd" secondAttribute="bottom" id="4JC-4V-YQR"/>
+                            <constraint firstItem="PCs-2m-tTd" firstAttribute="leading" secondItem="Iur-1Z-HE7" secondAttribute="leading" id="6u5-xW-XcO"/>
+                            <constraint firstItem="Iur-1Z-HE7" firstAttribute="trailing" secondItem="PCs-2m-tTd" secondAttribute="trailing" id="naZ-63-zNs"/>
+                            <constraint firstItem="PCs-2m-tTd" firstAttribute="top" secondItem="Iur-1Z-HE7" secondAttribute="top" id="xYx-vp-0he"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Iur-1Z-HE7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gallery" id="5DX-8l-1Xk"/>
+                    <tabBarItem key="tabBarItem" title="Gallery" image="GalleryIcon" id="5DX-8l-1Xk"/>
+                    <connections>
+                        <outlet property="collectionview" destination="PCs-2m-tTd" id="u7v-Uq-kqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waq-vR-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +70,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.37645314660000001" green="0.58589949789999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qid-UO-aaL" firstAttribute="top" secondItem="bS1-bU-qeD" secondAttribute="top" id="4bA-7h-NRA"/>
                             <constraint firstItem="qid-UO-aaL" firstAttribute="leading" secondItem="bS1-bU-qeD" secondAttribute="leading" id="DXA-Wz-Q4S"/>
@@ -69,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="3342" y="858"/>
         </scene>
-        <!--View Controller-->
+        <!--News FeedVC-->
         <scene sceneID="8o5-kh-Ui8">
             <objects>
-                <viewController id="EQZ-3P-YgM" sceneMemberID="viewController">
+                <viewController id="EQZ-3P-YgM" customClass="NewsFeedVC" customModule="iOSTrainingProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QnO-aE-nvS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +113,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.38837811960000002" blue="0.28638955030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TDU-FR-PMq" firstAttribute="leading" secondItem="2bh-JC-esx" secondAttribute="leading" id="BOc-IF-Gxb"/>
                             <constraint firstItem="TDU-FR-PMq" firstAttribute="top" secondItem="2bh-JC-esx" secondAttribute="top" id="a4T-xL-CUi"/>
@@ -112,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="3354" y="-693"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="xtA-rx-6hu">
             <objects>
-                <tabBarController id="hne-sC-6OH" sceneMemberID="viewController">
+                <tabBarController id="hne-sC-6OH" customClass="MainTabBarController" customModule="iOSTrainingProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sez-so-gT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -125,7 +156,7 @@
                         <segue destination="aEQ-2b-2s9" kind="relationship" relationship="viewControllers" id="FIr-l9-ncS"/>
                         <segue destination="2vc-vb-T8s" kind="relationship" relationship="viewControllers" id="iju-7m-4pq"/>
                         <segue destination="fDr-Hh-GXc" kind="relationship" relationship="viewControllers" id="2mj-gU-aro"/>
-                        <segue destination="2Q1-CE-ZUr" kind="relationship" relationship="viewControllers" id="bjV-l2-UAM"/>
+                        <segue destination="2Q1-CE-ZUr" kind="relationship" relationship="viewControllers" id="FFv-nC-c5v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHy-DE-m8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +167,7 @@
         <scene sceneID="jea-21-Fwf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEQ-2b-2s9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News Feed" id="k9X-Lf-dXi"/>
+                    <tabBarItem key="tabBarItem" title="News Feed" image="NewsFeedIcon" id="k9X-Lf-dXi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xud-hX-Sek">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -183,7 +214,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.87609849070000001" blue="0.20837150309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="93O-HO-BQJ" firstAttribute="bottom" secondItem="eeF-Fb-vlx" secondAttribute="bottom" id="JM0-hM-wVA"/>
                             <constraint firstItem="eeF-Fb-vlx" firstAttribute="top" secondItem="93O-HO-BQJ" secondAttribute="top" id="PEP-L8-7K0"/>
@@ -233,4 +264,8 @@
             <point key="canvasLocation" x="1526.0869565217392" y="1694.8660714285713"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GalleryIcon" width="13" height="13"/>
+        <image name="NewsFeedIcon" width="13" height="13"/>
+    </resources>
 </document>

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol NetworkProtocol{
-    func GetData(for ItemType: String) -> NSDictionary?
+    func GetData<T: Decodable>(for ItemType: String, completionhandler: @escaping ([T])->())
 }

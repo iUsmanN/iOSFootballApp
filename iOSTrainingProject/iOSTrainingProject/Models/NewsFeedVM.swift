@@ -9,33 +9,61 @@
 import Foundation
 import FirebaseDatabase
 
-struct NewsFeedVM
+class NewsFeedVM : NewsFeedService
 {
-    var items:[NewsFeedItem]
-    {
-        didSet
-        {
-            //update tableview ?
-        }
-    }
+    var items: [NewsFeedItem]?
     
     let networkLayer: NetworkLayer = NetworkLayer()
     
-    mutating func getData()
+    func getData()
     {
-        let value = networkLayer.GetData(for: "NewsFeed")
-        
-        //Parse the data to fill the items array
-//        var typedb: Type?
-//        if let t = value?["age"] as? Int
-//        {
-//            typedb = Type(rawValue: t)
-//        }
-//        
-//        let title_db = value?["title"] as? String ?? "ERR"
-//        let desc_db = value?["desc"] as? String ?? "ERR"
-//        let url_db = value?["url"] as? String ?? "ERR"
-//        
-//        items.append(NewsFeedItem(url: url_db, title: title_db, description: desc_db, type: typedb))
+        getNFData("NewsFeed", completion: SetData(_:))
+        //networkService("NewsFeed", completion: SetData(_:))
     }
+
+    func networkService(_ nodeName: String, completion:  @escaping ([NewsFeedItem]?) -> ()) {
+        
+        networkLayer.GetData(for: nodeName, completionhandler: completion)
+    }
+    
+    func SetData(_ input: [NewsFeedItem]?)
+    {
+        items = input
+        print("Items Set")
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func ParseData(_ data: Data?)
+    {
+        if let data = data
+        {
+            do{
+                let j = try JSONDecoder().decode([NewsFeedItem].self, from: data)
+                print("OK")
+            } catch{
+                print("Decoding Exception")
+                print(error)
+            }
+        }
+    }
+    
+    //functions to provide data to view controller
 }

@@ -1,17 +1,21 @@
 //
-//  NetworkLayer.swift
+//  NetworkEngine.swift
 //  iOSTrainingProject
 //
-//  Created by Usman Nazir on 15/07/2019.
+//  Created by Usman Nazir on 16/07/2019.
 //  Copyright © 2019 Usman Nazir. All rights reserved.
 //
 
 import Foundation
-import FirebaseDatabase
+import Firebase
 
-struct NetworkLayer : NetworkProtocol
-{
-    func GetData<T>(for ItemType: String, completionhandler: @escaping ([T]) -> ()) where T : Decodable {
+protocol NetworkEngine {
+    func GetData<T>(for ItemType: String, completionhandler: @escaping ([T]) -> ()) where T : Decodable
+}
+
+extension NetworkEngine {
+    func GetData<T>(for ItemType: String, completionhandler: @escaping ([T]) -> ()) where T : Decodable
+    {
         let ref = Database.database().reference()
         ref.child(ItemType).observeSingleEvent(of: .value) { (datasnap) in
             if let startData = datasnap.value as? [AnyObject] {
@@ -37,16 +41,4 @@ struct NetworkLayer : NetworkProtocol
             }
         }
     }
-    
-    
-    //    func GetData(for ItemType: String, completionhandler: @escaping (Data?)->()){
-    //        let ref = Database.database().reference()
-    //        ref.child("NewsFeed").observeSingleEvent(of: .value) { (datasnap) in
-    //            let data = try? JSONSerialization.data(withJSONObject: datasnap.value as Any)
-    //
-    //            print(String(data: data!, encoding: .utf8))
-    //
-    //            completionhandler(data)
-    //        }
-    //    }
 }

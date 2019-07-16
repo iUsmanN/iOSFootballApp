@@ -8,17 +8,10 @@
 
 import Foundation
 
-enum Type: Int
-{
-    case Video = 1
-    case Fact
-    case NewsLink
-}
-
-struct NewsFeedItem
+struct NewsFeedItem : Decodable
 {
     var url: String?
     var title: String?
     var description: String?
-    var type: Type?
+    var type: Int?
 }
