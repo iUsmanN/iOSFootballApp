@@ -7,14 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
 class GalleryVM : GalleryService
 {
+    var refreshCollectionViewClosure: (()->())?
+    
+    init(refreshColViewClosure: @escaping ()->())
+    {
+        refreshCollectionViewClosure = refreshColViewClosure
+    }
+    
     var items: [GalleryItem]?
     {
         didSet
         {
-            //should refresh collectionview
+            if let refreshCollectionViewClosure = refreshCollectionViewClosure
+            {
+                refreshCollectionViewClosure()
+            }
         }
     }
     
@@ -26,5 +37,29 @@ class GalleryVM : GalleryService
     func setItems(input: [GalleryItem]?)
     {
         items = input
+    }
+    
+    func numberOfItemsInSection(_ section: Int) -> Int
+    {
+        return items?.count ?? 0
+    }
+    
+    func imageForUrl(at indexpath: IndexPath) -> UIImage
+    {
+        if let url = URL(string: items?[indexpath.row].url ?? "")
+        {
+            do{
+                let data = try Data(contentsOf: url)
+                return UIImage(data: data) ?? UIImage(named: "DefaultImage")!
+            } catch {
+                print("Error in loading data")
+            }
+        }
+        return UIImage(named: "DefaultImage")!
+    }
+    
+    func Caption(at indexpath: IndexPath) -> String
+    {
+        return items?[indexpath.row].caption ?? ""
     }
 }

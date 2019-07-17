@@ -39,7 +39,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.17399358409999999" green="1" blue="0.40827968050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Iur-1Z-HE7" firstAttribute="bottom" secondItem="PCs-2m-tTd" secondAttribute="bottom" id="4JC-4V-YQR"/>
                             <constraint firstItem="PCs-2m-tTd" firstAttribute="leading" secondItem="Iur-1Z-HE7" secondAttribute="leading" id="6u5-xW-XcO"/>
@@ -50,7 +50,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Gallery" image="GalleryIcon" id="5DX-8l-1Xk"/>
                     <connections>
-                        <outlet property="collectionview" destination="PCs-2m-tTd" id="u7v-Uq-kqu"/>
+                        <outlet property="CollectionView" destination="PCs-2m-tTd" id="TBh-8t-qXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waq-vR-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,6 +157,8 @@
                         <segue destination="2vc-vb-T8s" kind="relationship" relationship="viewControllers" id="iju-7m-4pq"/>
                         <segue destination="fDr-Hh-GXc" kind="relationship" relationship="viewControllers" id="2mj-gU-aro"/>
                         <segue destination="2Q1-CE-ZUr" kind="relationship" relationship="viewControllers" id="FFv-nC-c5v"/>
+                        <segue destination="Knu-4a-veI" kind="relationship" relationship="viewControllers" id="WNf-Wh-0iH"/>
+                        <segue destination="NQt-dy-ywj" kind="relationship" relationship="viewControllers" id="Jgt-df-udR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHy-DE-m8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,11 +184,11 @@
             </objects>
             <point key="canvasLocation" x="1540.5797101449277" y="-689.0625"/>
         </scene>
-        <!--Rankings-->
+        <!--Teams-->
         <scene sceneID="gyl-kJ-jyn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fDr-Hh-GXc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rankings" id="qbA-dg-5CC"/>
+                    <tabBarItem key="tabBarItem" title="Teams" image="TeamsIcon" id="qbA-dg-5CC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysz-fR-YP5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -248,7 +250,7 @@
         <scene sceneID="Q1x-d7-jdl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Q1-CE-ZUr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Players" id="Ap2-wr-OJY"/>
+                    <tabBarItem key="tabBarItem" title="Players" image="PlayersIcon" id="Ap2-wr-OJY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eMc-Z5-efM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -263,9 +265,45 @@
             </objects>
             <point key="canvasLocation" x="1526.0869565217392" y="1694.8660714285713"/>
         </scene>
+        <!--About-->
+        <scene sceneID="FRO-0S-Tep">
+            <objects>
+                <viewController id="Knu-4a-veI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSl-w2-3wD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fcJ-r1-0ap"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="AboutIcon" id="56b-e5-N3I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYp-zF-rS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512" y="2548"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="cIO-5M-CUy">
+            <objects>
+                <viewController id="NQt-dy-ywj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6K1-4n-McS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zBo-XV-xV0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" image="MoviesIcon" id="ZuF-V6-4T1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ia-rA-xGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="3343"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="GalleryIcon" width="13" height="13"/>
-        <image name="NewsFeedIcon" width="13" height="13"/>
+        <image name="AboutIcon" width="25" height="25"/>
+        <image name="GalleryIcon" width="25" height="25"/>
+        <image name="MoviesIcon" width="25" height="25"/>
+        <image name="NewsFeedIcon" width="25" height="25"/>
+        <image name="PlayersIcon" width="25" height="25"/>
+        <image name="TeamsIcon" width="25" height="25"/>
     </resources>
 </document>
