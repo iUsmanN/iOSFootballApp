@@ -44,18 +44,18 @@ class GalleryVM : GalleryService
         return items?.count ?? 0
     }
     
-    func imageForUrl(at indexpath: IndexPath) -> UIImage
+    func imageForUrl(at indexpath: IndexPath) -> UIImage?
     {
         if let url = URL(string: items?[indexpath.row].url ?? "")
         {
             do{
                 let data = try Data(contentsOf: url)
-                return UIImage(data: data) ?? UIImage(named: "DefaultImage")!
+                return UIImage(data: data)
             } catch {
                 print("Error in loading data")
             }
         }
-        return UIImage(named: "DefaultImage")!
+        return nil
     }
     
     func Caption(at indexpath: IndexPath) -> String

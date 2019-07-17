@@ -36,12 +36,12 @@
                             <constraint firstItem="v6V-Nb-cT4" firstAttribute="centerY" secondItem="K0R-2b-NDg" secondAttribute="centerY" id="pKp-QN-qCk"/>
                         </constraints>
                     </scrollView>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sou-DW-GWe">
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sou-DW-GWe">
                         <rect key="frame" x="0.0" y="81" width="75" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrq-cs-j7Z">
                                 <rect key="frame" x="8" y="8" width="59" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

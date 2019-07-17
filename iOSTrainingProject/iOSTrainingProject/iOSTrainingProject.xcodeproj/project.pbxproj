@@ -28,6 +28,11 @@
 		4A82D8E122DDEC1D00056949 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8E022DDEC1D00056949 /* GalleryItem.swift */; };
 		4A82D8E422DEF45300056949 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8E222DEF45300056949 /* GalleryCollectionViewCell.swift */; };
 		4A82D8E522DEF45300056949 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D8E322DEF45300056949 /* GalleryCollectionViewCell.xib */; };
+		4A82D8E722DF3E8A00056949 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8E622DF3E8A00056949 /* RankingTableViewCell.swift */; };
+		4A82D8EB22DF3FCC00056949 /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8EA22DF3FCC00056949 /* TeamsVC.swift */; };
+		4A82D8ED22DF400A00056949 /* TeamsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8EC22DF400A00056949 /* TeamsVM.swift */; };
+		4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8EE22DF402D00056949 /* TeamsService.swift */; };
+		4A82D8F122DF40BE00056949 /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8F022DF40BE00056949 /* RankingItem.swift */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,11 @@
 		4A82D8E022DDEC1D00056949 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		4A82D8E222DEF45300056949 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A82D8E322DEF45300056949 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A82D8E622DF3E8A00056949 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		4A82D8EA22DF3FCC00056949 /* TeamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
+		4A82D8EC22DF400A00056949 /* TeamsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVM.swift; sourceTree = "<group>"; };
+		4A82D8EE22DF402D00056949 /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
+		4A82D8F022DF40BE00056949 /* RankingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +104,7 @@
 		4A45253322DC59EE00A6F381 = {
 			isa = PBXGroup;
 			children = (
-				4A82D8D922DDE9D900056949 /* Xibs */,
+				4A82D8D922DDE9D900056949 /* Cells */,
 				4A82D8D422DDE4A700056949 /* Services */,
 				4A82D8CF22DCE13700056949 /* Controllers */,
 				4A82D8CC22DC9D0100056949 /* Network */,
@@ -146,6 +156,7 @@
 			children = (
 				4A82D8CD22DCAC0700056949 /* NewsFeedVM.swift */,
 				4A82D8DC22DDEAE200056949 /* GalleryVM.swift */,
+				4A82D8EC22DF400A00056949 /* TeamsVM.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 			children = (
 				4A82D8CA22DC9AE000056949 /* NewsFeedItem.swift */,
 				4A82D8E022DDEC1D00056949 /* GalleryItem.swift */,
+				4A82D8F022DF40BE00056949 /* RankingItem.swift */,
 			);
 			path = "Data Types";
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 				4A82D8D022DCE15F00056949 /* MainTabBarController.swift */,
 				4A82D8D222DDA83F00056949 /* NewsFeedVC.swift */,
 				4A82D8DA22DDEA0500056949 /* GalleryViewController.swift */,
+				4A82D8EA22DF3FCC00056949 /* TeamsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,17 +204,19 @@
 			children = (
 				4A82D8D522DDE4CD00056949 /* NewsFeedService.swift */,
 				4A82D8DE22DDEB5700056949 /* GalleryService.swift */,
+				4A82D8EE22DF402D00056949 /* TeamsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		4A82D8D922DDE9D900056949 /* Xibs */ = {
+		4A82D8D922DDE9D900056949 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				4A82D8E222DEF45300056949 /* GalleryCollectionViewCell.swift */,
 				4A82D8E322DEF45300056949 /* GalleryCollectionViewCell.xib */,
+				4A82D8E622DF3E8A00056949 /* RankingTableViewCell.swift */,
 			);
-			path = Xibs;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7B1D4A3DF409BC70847771B3 /* Frameworks */ = {
@@ -370,15 +385,20 @@
 			files = (
 				4A82D8DB22DDEA0500056949 /* GalleryViewController.swift in Sources */,
 				4A82D8E422DEF45300056949 /* GalleryCollectionViewCell.swift in Sources */,
+				4A82D8E722DF3E8A00056949 /* RankingTableViewCell.swift in Sources */,
 				4A82D8C522DC99D200056949 /* NetworkLayer.swift in Sources */,
 				4A82D8CE22DCAC0700056949 /* NewsFeedVM.swift in Sources */,
 				4A82D8C822DC9A1600056949 /* Network Protocols.swift in Sources */,
+				4A82D8EB22DF3FCC00056949 /* TeamsVC.swift in Sources */,
+				4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */,
 				4A82D8D122DCE15F00056949 /* MainTabBarController.swift in Sources */,
 				4A82D8DD22DDEAE200056949 /* GalleryVM.swift in Sources */,
 				4A45254222DC59EE00A6F381 /* ViewController.swift in Sources */,
 				4A82D8D322DDA83F00056949 /* NewsFeedVC.swift in Sources */,
 				4A82D8D822DDE52400056949 /* NetworkEngine.swift in Sources */,
+				4A82D8F122DF40BE00056949 /* RankingItem.swift in Sources */,
 				4A82D8E122DDEC1D00056949 /* GalleryItem.swift in Sources */,
+				4A82D8ED22DF400A00056949 /* TeamsVM.swift in Sources */,
 				4A45254022DC59EE00A6F381 /* AppDelegate.swift in Sources */,
 				4A82D8DF22DDEB5700056949 /* GalleryService.swift in Sources */,
 				4A82D8D622DDE4CD00056949 /* NewsFeedService.swift in Sources */,
