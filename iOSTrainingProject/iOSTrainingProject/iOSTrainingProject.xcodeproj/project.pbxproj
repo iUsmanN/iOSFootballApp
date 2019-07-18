@@ -33,6 +33,7 @@
 		4A82D8ED22DF400A00056949 /* TeamsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8EC22DF400A00056949 /* TeamsVM.swift */; };
 		4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8EE22DF402D00056949 /* TeamsService.swift */; };
 		4A82D8F122DF40BE00056949 /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8F022DF40BE00056949 /* RankingItem.swift */; };
+		4A82D8F422E05A8400056949 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8F322E05A8400056949 /* Colors.swift */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		4A82D8EC22DF400A00056949 /* TeamsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVM.swift; sourceTree = "<group>"; };
 		4A82D8EE22DF402D00056949 /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
 		4A82D8F022DF40BE00056949 /* RankingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
+		4A82D8F322E05A8400056949 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 		4A45253322DC59EE00A6F381 = {
 			isa = PBXGroup;
 			children = (
+				4A82D8F222E05A6F00056949 /* Colors */,
 				4A82D8D922DDE9D900056949 /* Cells */,
 				4A82D8D422DDE4A700056949 /* Services */,
 				4A82D8CF22DCE13700056949 /* Controllers */,
@@ -217,6 +220,14 @@
 				4A82D8E622DF3E8A00056949 /* RankingTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A82D8F222E05A6F00056949 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				4A82D8F322E05A8400056949 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		7B1D4A3DF409BC70847771B3 /* Frameworks */ = {
@@ -393,6 +404,7 @@
 				4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */,
 				4A82D8D122DCE15F00056949 /* MainTabBarController.swift in Sources */,
 				4A82D8DD22DDEAE200056949 /* GalleryVM.swift in Sources */,
+				4A82D8F422E05A8400056949 /* Colors.swift in Sources */,
 				4A45254222DC59EE00A6F381 /* ViewController.swift in Sources */,
 				4A82D8D322DDA83F00056949 /* NewsFeedVC.swift in Sources */,
 				4A82D8D822DDE52400056949 /* NetworkEngine.swift in Sources */,
