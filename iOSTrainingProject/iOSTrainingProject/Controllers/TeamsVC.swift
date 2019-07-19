@@ -17,8 +17,8 @@ class TeamsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.dataSource    = self
+        tableView.delegate      = self
         
         vm = TeamsVM({
             self.tableView.reloadData()
@@ -38,8 +38,10 @@ extension TeamsVC : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamsTableViewCell", for: indexPath) as! RankingTableViewCell
         
-        cell.item = vm?.getItemForRow(at: indexPath)
-        cell.item?.ranking = indexPath.row+1
+        cell.item           = vm?.getItemForRow(at: indexPath)
+        cell.item?.ranking  = indexPath.row+1
+        
+        vm?.getPaginatedData(indexPath: indexPath)
         
         return cell
     }

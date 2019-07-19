@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol NewsFeedService : NetworkEngine{
-    func getNFData(_ nodeName: String, completion:  @escaping ([NewsFeedItem]?) -> ())
+protocol NewsFeedService : NetworkEngine {
+    func getNFData(_ startingIndex: Int, _ amount:Int, completion:  @escaping ([NewsFeedItem]) -> ())
 }
 
-extension NewsFeedService{
-    func getNFData(_ nodeName: String, completion:  @escaping ([NewsFeedItem]?) -> ())
-    {
-        GetData(for: nodeName, completionhandler: completion)
+extension NewsFeedService {
+    
+    func getNFData(_ startingIndex: Int, _ amount:Int, completion:  @escaping ([NewsFeedItem]) -> ()) {
+        addObserver(for: "NewsFeed", startingIndex, amount, completionhandler: completion)
     }
 }

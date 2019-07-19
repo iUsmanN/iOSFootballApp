@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct RankingItem : Decodable {
-    var ranking: Int?
-    var name: String?
-    var pointsto: Int?
-    var pointsfrom: Int?
-    var position: Int?
-    var flag: String?
+struct RankingItem  : Decodable {
+    var ranking     : Int?
+    var name        : String?
+    var pointsto    : Int?
+    var pointsfrom  : Int?
+    var position    : Int?
+    var flag        : String?
+    var desc        : String?
 }

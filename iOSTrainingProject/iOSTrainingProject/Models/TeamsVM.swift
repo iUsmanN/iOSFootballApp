@@ -8,41 +8,47 @@
 
 import Foundation
 
-class TeamsVM : TeamsService
-{
-    var items: [RankingItem]? {
-        didSet{
-            if let tableRefreshClosure = tableRefreshClosure
-            {
+class TeamsVM : TeamsService {
+    let total: Int = 20
+    var items = [RankingItem]() {
+        didSet {
+            if let tableRefreshClosure = tableRefreshClosure {
                 tableRefreshClosure()
+                print(items.count)
             }
         }
     }
     
     var tableRefreshClosure: (()->())?
     
-    init(_ tableRefreshCl: @escaping (()->()))
-    {
+    init(_ tableRefreshCl: @escaping (()->())) {
         tableRefreshClosure = tableRefreshCl
     }
     
-    func getData()
-    {
-        getData(completion: setData(_:))
+    func getData() {
+        getData(0, 13, completion: setData(_:))
     }
     
-    func setData(_ input: [RankingItem]?)
-    {
-        items = input
+    func setData(_ input: [RankingItem]) {
+        items.append(contentsOf: input)
     }
     
-    func getNumberOfRows(for section: Int) -> Int
-    {
-        return items?.count ?? 0
+    func getNumberOfRows(for section: Int) -> Int {
+        return items.count// ?? 0
     }
     
-    func getItemForRow(at indexpath: IndexPath) -> RankingItem
+    func getItemForRow(at indexpath: IndexPath) -> RankingItem {
+        return items[indexpath.row]
+    }
+    
+    func getPaginatedData(indexPath: IndexPath)
     {
-        return items?[indexpath.row] ?? RankingItem(ranking: -1, name: "NIL", pointsto: -1, pointsfrom: -1, position: -1, flag: "NIL")
+        print("indexPath: " + String(indexPath.row))
+        
+        if (items.count - indexPath.row == 2)
+        {
+            print("Getting data")
+            getData(items.count - 1, min(total - items.count, 5), completion: setData(_:))
+        }
     }
 }

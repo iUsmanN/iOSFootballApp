@@ -23,10 +23,8 @@ struct NetworkLayer : NetworkProtocol
             //DELETE THIS LATER ON
             print(String(data: data!, encoding: .utf8)!)
             
-            if let data = data
-            {
-                do
-                {
+            if let data = data {
+                do {
                     let item = try JSONDecoder().decode([T].self, from: data)
                     completionhandler(item)
                     print("OK")
@@ -37,16 +35,4 @@ struct NetworkLayer : NetworkProtocol
             }
         }
     }
-    
-    
-    //    func GetData(for ItemType: String, completionhandler: @escaping (Data?)->()){
-    //        let ref = Database.database().reference()
-    //        ref.child("NewsFeed").observeSingleEvent(of: .value) { (datasnap) in
-    //            let data = try? JSONSerialization.data(withJSONObject: datasnap.value as Any)
-    //
-    //            print(String(data: data!, encoding: .utf8))
-    //
-    //            completionhandler(data)
-    //        }
-    //    }
 }

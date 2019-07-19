@@ -8,15 +8,12 @@
 
 import Foundation
 
-protocol GalleryService : NetworkEngine
-{
-    func getGalleryData(completion: @escaping ([GalleryItem]?) -> ())
+protocol GalleryService : NetworkEngine {
+    func getGalleryData(_ startingIndex: Int, _ amount:Int, completion: @escaping ([GalleryItem]) -> ())
 }
 
-extension GalleryService
-{
-    func getGalleryData(completion: @escaping ([GalleryItem]?) -> ())
-    {
-        GetData(for: "Gallery", completionhandler: completion)
+extension GalleryService {
+    func getGalleryData(_ startingIndex: Int, _ amount:Int, completion: @escaping ([GalleryItem]) -> ()) {
+        addObserver(for: "Gallery", startingIndex, amount, completionhandler: completion)
     }
 }

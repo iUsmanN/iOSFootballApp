@@ -8,15 +8,12 @@
 
 import Foundation
 
-protocol TeamsService : NetworkEngine
-{
-    func getData(completion: @escaping ([RankingItem]?)->())
+protocol TeamsService : NetworkEngine {
+    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([RankingItem])->())
 }
 
-extension TeamsService
-{
-    func getData(completion: @escaping ([RankingItem]?)->())
-    {
-        GetData(for: "Teams", completionhandler: completion)
+extension TeamsService {
+    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([RankingItem])->()) {
+        addObserver(for: "Teams", startingIndex, amount, completionhandler: completion)
     }
 }

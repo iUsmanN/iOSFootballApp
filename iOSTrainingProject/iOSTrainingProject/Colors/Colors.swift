@@ -9,15 +9,12 @@
 import Foundation
 import UIKit
 
-protocol Color
-{
+protocol Color {
     func getColor(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat) -> UIColor
 }
 
-extension Color
-{
-    func getColor(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat) -> UIColor
-    {
+extension Color {
+    func getColor(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat) -> UIColor {
         return UIColor(red: r, green: g, blue: b, alpha: alpha)
     }
 }

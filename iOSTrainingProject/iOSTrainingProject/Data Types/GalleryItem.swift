@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct GalleryItem : Decodable
-{
-    var url: String?
-    var caption: String?
+struct GalleryItem  : Decodable {
+    var url         : String?
+    var caption     : String?
 }
