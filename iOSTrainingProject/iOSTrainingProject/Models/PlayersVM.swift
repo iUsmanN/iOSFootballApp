@@ -23,7 +23,7 @@ class PlayersVM: PlayersService {
     func getData(closure: @escaping ()->())
     {
         reloadTableView = closure
-        getData(0, 13, completion: setData(_:))
+        items = DataManager.shared.getPlayerItems()
     }
     
     func setData(_ input: [PlayerItem])

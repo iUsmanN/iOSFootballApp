@@ -11,11 +11,11 @@ import FirebaseDatabase
 
 class NewsFeedVM : NewsFeedService {
     let total       : Int = 10
-    var items       : [NewsFeedItem]?
+    var items       : [NewsFeedItem]? { didSet { print(items?.count) }}
     let networkLayer: NetworkLayer = NetworkLayer()
     
     func getData() {
-        getNFData(0, 10, completion: SetData(_:))
+        items = DataManager.shared.getNewsFeedItems()
     }
     
     func SetData(_ input: [NewsFeedItem]) {

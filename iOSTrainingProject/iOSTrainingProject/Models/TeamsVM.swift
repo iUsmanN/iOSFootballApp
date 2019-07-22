@@ -28,7 +28,7 @@ class TeamsVM : TeamsService {
     }
     
     func getData() {
-        getData(0, 13, completion: setData(_:))
+        items = DataManager.shared.getTeamItems()
     }
     
     func setData(_ input: [RankingItem]) {

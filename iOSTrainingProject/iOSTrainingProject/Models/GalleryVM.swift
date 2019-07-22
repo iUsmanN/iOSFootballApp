@@ -17,7 +17,7 @@ class GalleryVM : GalleryService {
         refreshCollectionViewClosure = refreshColViewClosure
     }
     
-    var items: [GalleryItem]? {
+    var items = [GalleryItem]() {
         didSet {
             if let refreshCollectionViewClosure = refreshCollectionViewClosure {
                 refreshCollectionViewClosure()
@@ -26,18 +26,18 @@ class GalleryVM : GalleryService {
     }
     
     func getData() {
-        getGalleryData(0, 6, completion: setItems(input:))
+        items = DataManager.shared.getGalleryItems()
     }
     
     func setItems(input: [GalleryItem]) {
-        items = input
+        items.append(contentsOf: input)
     }
     
     func numberOfItemsInSection(_ section: Int) -> Int {
-        return items?.count ?? 0
+        return items.count
     }
     
     func galleryItem( at indexPath: IndexPath) -> GalleryItem {
-        return items?[indexPath.row] ?? GalleryItem(url: "", caption: "")
+        return items[indexPath.row]
     }
 }
