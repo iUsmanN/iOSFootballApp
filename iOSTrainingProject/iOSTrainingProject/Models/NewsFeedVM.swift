@@ -10,10 +10,8 @@ import Foundation
 import FirebaseDatabase
 
 class NewsFeedVM : NewsFeedService {
-    let total: Int = 10
-
-    var items: [NewsFeedItem]?
-    
+    let total       : Int = 10
+    var items       : [NewsFeedItem]?
     let networkLayer: NetworkLayer = NetworkLayer()
     
     func getData() {

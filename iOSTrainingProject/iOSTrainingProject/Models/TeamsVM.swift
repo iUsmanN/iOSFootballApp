@@ -9,12 +9,14 @@
 import Foundation
 
 class TeamsVM : TeamsService {
-    let total: Int = 20
-    var items = [RankingItem]() {
+    let total: Int  = 20
+    var items       = [RankingItem]() {
         didSet {
-            if let tableRefreshClosure = tableRefreshClosure {
-                tableRefreshClosure()
-                print(items.count)
+            if(items.count <= 13) {
+                if let tableRefreshClosure = tableRefreshClosure {
+                    tableRefreshClosure()
+                    print(items.count)
+                }
             }
         }
     }
@@ -34,7 +36,7 @@ class TeamsVM : TeamsService {
     }
     
     func getNumberOfRows(for section: Int) -> Int {
-        return items.count// ?? 0
+        return items.count
     }
     
     func getItemForRow(at indexpath: IndexPath) -> RankingItem {
@@ -48,7 +50,7 @@ class TeamsVM : TeamsService {
         if (items.count - indexPath.row == 2)
         {
             print("Getting data")
-            getData(items.count - 1, min(total - items.count, 5), completion: setData(_:))
+            getData(items.count, min(total - items.count, 3), completion: setData(_:))
         }
     }
 }

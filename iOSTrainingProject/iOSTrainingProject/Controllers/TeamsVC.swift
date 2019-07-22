@@ -23,7 +23,6 @@ class TeamsVC: UIViewController {
         vm = TeamsVM({
             self.tableView.reloadData()
         })
-        
         vm?.getData()
     }
 }
@@ -37,14 +36,27 @@ extension TeamsVC : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamsTableViewCell", for: indexPath) as! RankingTableViewCell
-        
         cell.item           = vm?.getItemForRow(at: indexPath)
-        cell.item?.ranking  = indexPath.row+1
-        
         vm?.getPaginatedData(indexPath: indexPath)
-        
         return cell
     }
+}
+
+extension TeamsVC {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showDetails")
+        {
+            if let destination = segue.destination as? DetailsVC
+            {
+                destination.item = vm?.getItemForRow(at: tableView.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0))
+                destination.cellImage = getImageOfCell(at: tableView.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0))
+            }
+        }
+    }
     
+    func getImageOfCell(at indexPath: IndexPath) -> UIImage? {
+        let cell = tableView.cellForRow(at: indexPath) as? RankingTableViewCell
+        return cell?.flag.image
+    }
 }

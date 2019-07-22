@@ -17,21 +17,23 @@ protocol NetworkEngine {
 extension NetworkEngine {
     func addObserver<T>(for ItemType: String, _ startingIndex: Int, _ amount:Int, completionhandler: @escaping ([T]) -> ()) where T : Decodable {
         let ref = Database.database().reference()
-        ref.child(ItemType).queryOrderedByKey().queryStarting(atValue:String(startingIndex)).queryEnding(atValue:String(startingIndex + amount - 1)).observeSingleEvent(of: .value) { (datasnap) in
-            
-            let data = try? JSONSerialization.data(withJSONObject: datasnap.value as AnyObject)
-            
-            if let data = data {
+        ref.child(ItemType).queryOrderedByKey().queryStarting(atValue:String(startingIndex)).queryEnding(atValue:String(startingIndex + amount - 1))
+            .observeSingleEvent(of: .value) { (datasnap) in
+                var items:[T] = Array()
                 do {
-                    let item = try JSONDecoder().decode([T?].self, from: data)
-                    let itemsfiltered = filterItems(item)
-                    completionhandler(itemsfiltered)
-                    print("OK")
+                    for child in datasnap.children.allObjects {
+                        let snap = child as! DataSnapshot
+                        let data = snap.value as! [String:Any]
+                        let serializedData = try JSONSerialization.data(withJSONObject: data)
+                        let x = try JSONDecoder().decode(T.self, from: serializedData)
+                        items.append(x)
+                        print("OK")
+                    }
+                    completionhandler(items);
                 } catch {
-                    print("JSON Decoder Error: ")
-                    print (error)
+                    print("ERROR")
+                    print(error.localizedDescription)
                 }
-            }
         }
     }
 }

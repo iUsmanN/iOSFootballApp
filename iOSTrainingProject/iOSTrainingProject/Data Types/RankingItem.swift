@@ -17,3 +17,7 @@ struct RankingItem  : Decodable {
     var flag        : String?
     var desc        : String?
 }
+
+extension RankingItem : HasDetails {
+    
+}

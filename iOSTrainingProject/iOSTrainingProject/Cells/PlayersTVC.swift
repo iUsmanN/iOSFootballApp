@@ -1,16 +1,16 @@
 //
-//  RankingTableViewCell.swift
+//  PlayersTVC.swift
 //  iOSTrainingProject
 //
-//  Created by Usman Nazir on 17/07/2019.
+//  Created by Usman Nazir on 21/07/2019.
 //  Copyright © 2019 Usman Nazir. All rights reserved.
 //
 
 import UIKit
 
-class RankingTableViewCell: UITableViewCell, Color {
-    
-    var item: RankingItem?
+class PlayersTVC: UITableViewCell, Color {
+
+    var item: PlayerItem?
     
     @IBOutlet weak var flag     : UIImageView!
     @IBOutlet weak var ranking  : UILabel!
@@ -20,13 +20,12 @@ class RankingTableViewCell: UITableViewCell, Color {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        setCALayer()
+        print("super.awakeFromNib()")
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         //Set Rank
         if let rank = item?.ranking {
             ranking.text = String(rank)
@@ -39,12 +38,12 @@ class RankingTableViewCell: UITableViewCell, Color {
         
         //Set Flag image
         DispatchQueue.global(qos: .background).async {
-            if let flag = URL(string: self.item?.flag ?? "") {
+            if let flag = URL(string: self.item?.image ?? "") {
                 do {
                     let data = try Data(contentsOf: flag)
                     DispatchQueue.main.async { self.flag.image = UIImage(data: data) }
                 } catch {
-                    print("Error in downloading images")
+                    print("Error in loading data")
                 }
             }
         }
@@ -64,11 +63,5 @@ class RankingTableViewCell: UITableViewCell, Color {
             }
         }
     }
-    
-    func setCALayer()
-    {
-        layer.borderColor   = UIColor.black.cgColor
-        layer.borderWidth   = CGFloat(1)
-        layer.cornerRadius  = CGFloat(10)
-    }
+
 }

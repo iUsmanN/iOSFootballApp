@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class GalleryVM : GalleryService {
-    let total: Int = 5
-    
+    let total                       : Int = 5
     var refreshCollectionViewClosure: (()->())?
     
     init(refreshColViewClosure: @escaping ()->()) {
