@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayersTVC: UITableViewCell, Color {
+class PlayersTVC: UITableViewCell, Color, ImageManager {
 
     var item: PlayerItem?
     
@@ -37,15 +37,8 @@ class PlayersTVC: UITableViewCell, Color {
         }
         
         //Set Flag image
-        DispatchQueue.global(qos: .background).async {
-            if let flag = URL(string: self.item?.image ?? "") {
-                do {
-                    let data = try Data(contentsOf: flag)
-                    DispatchQueue.main.async { self.flag.image = UIImage(data: data) }
-                } catch {
-                    print("Error in loading data")
-                }
-            }
+        if let imageString = item?.image {
+            loadImage(imageString, completion: setImage(input:))
         }
         
         //Set position image
@@ -64,4 +57,7 @@ class PlayersTVC: UITableViewCell, Color {
         }
     }
 
+    func setImage(input: UIImage?) {
+        DispatchQueue.main.async { self.flag.image = input }
+    }
 }

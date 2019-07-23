@@ -37,21 +37,11 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
             teamName.text = name
         }
         
-        //Set Flag image
-        DispatchQueue.global(qos: .background).async {
-            if let flag = URL(string: self.item?.flag ?? "") {
-                do {
-                    let data = try Data(contentsOf: flag)
-                    DispatchQueue.main.async { self.flag.image = UIImage(data: data) }
-                } catch {
-                    print("Error in downloading images")
-                }
-            }
+        //Set Image
+        if let imagestring = self.item?.flag
+        {
+            loadImage(imagestring, completion: setImage(input:))
         }
-//        if let imagestring = self.item?.flag
-//        {
-//            DispatchQueue.main.async { self.flag.image = self.loadImage(imagestring) }
-//        }
         
         //Set position image
         if let pos = item?.position
@@ -74,5 +64,9 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
         layer.borderColor   = UIColor.black.cgColor
         layer.borderWidth   = CGFloat(1)
         layer.cornerRadius  = CGFloat(10)
+    }
+    
+    func setImage(input: UIImage?) {
+        DispatchQueue.main.async { self.flag.image = input }
     }
 }

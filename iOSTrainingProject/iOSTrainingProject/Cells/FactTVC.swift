@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FactTVC: UITableViewCell {
+class FactTVC: UITableViewCell, ImageManager {
 
     @IBOutlet weak var readMore: UIButton!
     @IBOutlet weak var share: UIButton!
@@ -27,26 +27,21 @@ class FactTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        title.text = item?.title
-        factImage.image = getImage(item?.url)
+        setupCell()
     }
 }
 
 extension FactTVC {
-    func getImage (_ s: String?) -> UIImage?
-    {
-        if let s = s {
-            DispatchQueue.global(qos: .background).async {
-                if let url = URL(string: s) {
-                    do {
-                        let data = try Data(contentsOf: url)
-                        DispatchQueue.main.async { return UIImage(data: data) }
-                    } catch {
-                        print("Error in loading data")
-                    }
-                }
-            }
+    func setupCell() {
+        title.text = item?.title
+        
+        if let imageString = item?.url
+        {
+            loadImage(imageString, completion: setImage(input:))
         }
-        return UIImage(named: "cat")
+    }
+    
+    func setImage(input: UIImage?) {
+        DispatchQueue.main.async { self.factImage.image = input }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GalleryCollectionViewCell: UICollectionViewCell {
+class GalleryCollectionViewCell: UICollectionViewCell, ImageManager {
     
     @IBOutlet weak var imagehere    : UIImageView!
     @IBOutlet weak var captionhere  : UILabel!
@@ -27,20 +27,15 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 10, height: 10)
     }
     
-  
+    
     func setupCell() {
-        var url: URL?
-        
-        DispatchQueue.global(qos: .background).async { url = URL(string: self.item?.url ?? "")
-            if let url = url {
-                do {
-                    let data = try Data(contentsOf: url)
-                    DispatchQueue.main.async { self.imagehere.image =  UIImage(data: data) }
-                } catch {
-                    print("Error in loading data")
-                }
-            }
+        if let url = item?.url {
+            loadImage(url, completion: setImage(input:))
         }
         captionhere.text = item?.caption
+    }
+    
+    func setImage(input: UIImage?) {
+        DispatchQueue.main.async { self.imagehere.image = input }
     }
 }

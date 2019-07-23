@@ -45,21 +45,16 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     }
     
     func LinkPreviewSuccess(response: Response) {
-        print(response.image)
-        
-        DispatchQueue.global(qos: .background).async {
-            if let url = URL(string: response.image ?? "") {
-                do {
-                    let data = try Data(contentsOf: url)
-                    DispatchQueue.main.async { self.imageHere.image = UIImage(data: data) }
-                } catch {
-                    print("Error in downloading images")
-                }
-            }
+        if let imageString = response.image {
+            loadImage(imageString, completion: setImage(input:))
         }
     }
     
     func LinkPreviewFailure(error: PreviewError) {
         print("Link preview error")
+    }
+    
+    func setImage(input: UIImage?) {
+        DispatchQueue.main.async { self.imageHere.image = input }
     }
 }
