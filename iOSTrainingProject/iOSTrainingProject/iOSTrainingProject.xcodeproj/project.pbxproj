@@ -46,6 +46,9 @@
 		4A82D90822E5BDD200056949 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90722E5BDD200056949 /* SplashVC.swift */; };
 		4A82D90B22E5D71A00056949 /* FactTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90922E5D71A00056949 /* FactTVC.swift */; };
 		4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D90A22E5D71A00056949 /* FactTVC.xib */; };
+		4A82D90F22E6E37A00056949 /* NewsLinkTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90D22E6E37A00056949 /* NewsLinkTVC.swift */; };
+		4A82D91022E6E37A00056949 /* NewsLinkTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D90E22E6E37A00056949 /* NewsLinkTVC.xib */; };
+		4A82D91222E6E63000056949 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91122E6E63000056949 /* ImageManager.swift */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,9 @@
 		4A82D90722E5BDD200056949 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		4A82D90922E5D71A00056949 /* FactTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTVC.swift; sourceTree = "<group>"; };
 		4A82D90A22E5D71A00056949 /* FactTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactTVC.xib; sourceTree = "<group>"; };
+		4A82D90D22E6E37A00056949 /* NewsLinkTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLinkTVC.swift; sourceTree = "<group>"; };
+		4A82D90E22E6E37A00056949 /* NewsLinkTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsLinkTVC.xib; sourceTree = "<group>"; };
+		4A82D91122E6E63000056949 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +201,7 @@
 			children = (
 				4A82D8C722DC9A1600056949 /* Network Protocols.swift */,
 				4A82D8F922E468EC00056949 /* HasDetails.swift */,
+				4A82D91122E6E63000056949 /* ImageManager.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -254,6 +261,8 @@
 				4A82D90322E4A58600056949 /* PlayersTVC.swift */,
 				4A82D90922E5D71A00056949 /* FactTVC.swift */,
 				4A82D90A22E5D71A00056949 /* FactTVC.xib */,
+				4A82D90D22E6E37A00056949 /* NewsLinkTVC.swift */,
+				4A82D90E22E6E37A00056949 /* NewsLinkTVC.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A82D91022E6E37A00056949 /* NewsLinkTVC.xib in Resources */,
 				4A45254A22DC59EF00A6F381 /* LaunchScreen.storyboard in Resources */,
 				4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */,
 				4A82D8C222DC8F0800056949 /* GoogleService-Info.plist in Resources */,
@@ -436,10 +446,12 @@
 				4A82D8DB22DDEA0500056949 /* GalleryViewController.swift in Sources */,
 				4A82D90222E4A44F00056949 /* PlayersVC.swift in Sources */,
 				4A82D8E422DEF45300056949 /* GalleryCollectionViewCell.swift in Sources */,
+				4A82D90F22E6E37A00056949 /* NewsLinkTVC.swift in Sources */,
 				4A82D8E722DF3E8A00056949 /* RankingTableViewCell.swift in Sources */,
 				4A82D8FA22E468EC00056949 /* HasDetails.swift in Sources */,
 				4A82D8C522DC99D200056949 /* NetworkLayer.swift in Sources */,
 				4A82D8CE22DCAC0700056949 /* NewsFeedVM.swift in Sources */,
+				4A82D91222E6E63000056949 /* ImageManager.swift in Sources */,
 				4A82D8C822DC9A1600056949 /* Network Protocols.swift in Sources */,
 				4A82D8EB22DF3FCC00056949 /* TeamsVC.swift in Sources */,
 				4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */,

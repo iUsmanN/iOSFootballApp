@@ -39,22 +39,23 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gVl-9I-Fcc">
-                                    <rect key="frame" x="76.5" y="127" width="174" height="30"/>
+                                    <rect key="frame" x="8" y="127" width="311" height="30"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVO-cA-6jJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125.5" height="30"/>
                                             <state key="normal" title="Read more">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3p-c0-bev">
-                                            <rect key="frame" x="134" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="185.5" y="0.0" width="125.5" height="30"/>
                                             <state key="normal" title="Share">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="o3p-c0-bev" firstAttribute="width" secondItem="GVO-cA-6jJ" secondAttribute="width" id="58K-Vx-LPa"/>
                                         <constraint firstItem="GVO-cA-6jJ" firstAttribute="height" secondItem="o3p-c0-bev" secondAttribute="height" id="XP6-Wr-nd3"/>
                                     </constraints>
                                 </stackView>
@@ -68,8 +69,10 @@
                                 <constraint firstItem="nQT-oD-M96" firstAttribute="leading" secondItem="PgQ-MC-7d5" secondAttribute="leading" constant="5" id="K2B-6o-xfV"/>
                                 <constraint firstItem="3d1-ov-U5W" firstAttribute="height" secondItem="nQT-oD-M96" secondAttribute="height" multiplier="0.35" id="KNA-Ny-dgN"/>
                                 <constraint firstAttribute="bottom" secondItem="gVl-9I-Fcc" secondAttribute="bottom" constant="5" id="c9k-x5-Odf"/>
+                                <constraint firstAttribute="trailing" secondItem="gVl-9I-Fcc" secondAttribute="trailing" constant="8" id="iES-pp-Gue"/>
                                 <constraint firstItem="gVl-9I-Fcc" firstAttribute="centerX" secondItem="PgQ-MC-7d5" secondAttribute="centerX" id="lSF-zI-s97"/>
                                 <constraint firstItem="3d1-ov-U5W" firstAttribute="trailing" secondItem="nQT-oD-M96" secondAttribute="trailing" id="tW0-ff-IVx"/>
+                                <constraint firstItem="gVl-9I-Fcc" firstAttribute="leading" secondItem="PgQ-MC-7d5" secondAttribute="leading" constant="8" id="zta-xH-dAz"/>
                             </constraints>
                         </view>
                         <blurEffect style="dark"/>
@@ -79,7 +82,7 @@
                     <constraint firstAttribute="bottom" secondItem="pK1-sd-xcc" secondAttribute="bottom" id="OTm-Ow-MPX"/>
                     <constraint firstItem="pK1-sd-xcc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vwo-xZ-1bi"/>
                     <constraint firstAttribute="trailing" secondItem="pK1-sd-xcc" secondAttribute="trailing" id="bPC-Ii-Jj0"/>
-                    <constraint firstItem="GVO-cA-6jJ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.3" id="cDq-xD-6yG"/>
+                    <constraint firstItem="GVO-cA-6jJ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.2" id="cDq-xD-6yG"/>
                     <constraint firstItem="pK1-sd-xcc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mQq-io-vTK"/>
                 </constraints>
             </tableViewCellContentView>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RankingTableViewCell: UITableViewCell, Color {
+class RankingTableViewCell: UITableViewCell, Color, ImageManager {
     
     var item: RankingItem?
     
@@ -48,6 +48,10 @@ class RankingTableViewCell: UITableViewCell, Color {
                 }
             }
         }
+//        if let imagestring = self.item?.flag
+//        {
+//            DispatchQueue.main.async { self.flag.image = self.loadImage(imagestring) }
+//        }
         
         //Set position image
         if let pos = item?.position

@@ -10,5 +10,6 @@ target 'iOSTrainingProject' do
   	pod 'Firebase/Core'
 	pod 'Firebase/Crash'
 	pod 'Firebase/Database'
+	pod 'SwiftLinkPreview', '~> 3.0.1'
 
 end

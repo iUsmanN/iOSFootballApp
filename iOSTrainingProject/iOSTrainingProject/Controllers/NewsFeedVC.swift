@@ -28,6 +28,8 @@ class NewsFeedVC: UIViewController {
         tableview.backgroundColor = UIColor.clear
         let nib = UINib(nibName: "FactTVC", bundle: nil)
         tableview.register(nib, forCellReuseIdentifier: "FACT")
+        let nib2 = UINib(nibName: "NewsLinkTVC", bundle: nil)
+        tableview.register(nib2, forCellReuseIdentifier: "NEWS")
     }
 }
 
@@ -54,6 +56,9 @@ extension NewsFeedVC : UITableViewDataSource {
             
         case 3:
             print("News Item")
+            let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as! NewsLinkTVC
+            cell.item = vm.itemAt(indexPath)
+            return cell
             
         default:
             print("Error in classifying NF Item")

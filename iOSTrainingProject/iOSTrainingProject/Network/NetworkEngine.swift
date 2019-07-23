@@ -36,6 +36,8 @@ extension NetworkEngine {
                 }
         }
     }
+    
+    //func loadImage(
 }
 
 func filterItems<T>(_ input: [T?]) -> [T] {
