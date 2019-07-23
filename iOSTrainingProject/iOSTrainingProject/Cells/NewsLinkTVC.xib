@@ -22,7 +22,7 @@
                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd4-n3-rrL">
                         <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dln-Zc-36X">
-                            <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="228"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-nd-CCU">

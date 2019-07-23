@@ -26,6 +26,7 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
         // Configure the view for the selected state
         setUpCell()
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class FactTVC: UITableViewCell, ImageManager {
-
+    
     @IBOutlet weak var readMore: UIButton!
     @IBOutlet weak var share: UIButton!
     @IBOutlet weak var title: UILabel!
@@ -22,10 +22,10 @@ class FactTVC: UITableViewCell, ImageManager {
         // Initialization code
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
         // Configure the view for the selected state
         setupCell()
     }

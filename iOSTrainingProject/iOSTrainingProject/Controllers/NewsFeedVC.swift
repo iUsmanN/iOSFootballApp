@@ -26,10 +26,12 @@ class NewsFeedVC: UIViewController {
     {
         tableview.dataSource = self
         tableview.backgroundColor = UIColor.clear
-        let nib = UINib(nibName: "FactTVC", bundle: nil)
-        tableview.register(nib, forCellReuseIdentifier: "FACT")
-        let nib2 = UINib(nibName: "NewsLinkTVC", bundle: nil)
-        tableview.register(nib2, forCellReuseIdentifier: "NEWS")
+        let factNib = UINib(nibName: "FactTVC", bundle: nil)
+        tableview.register(factNib, forCellReuseIdentifier: "FACT")
+        let newsNib = UINib(nibName: "NewsLinkTVC", bundle: nil)
+        tableview.register(newsNib, forCellReuseIdentifier: "NEWS")
+        let videoNib = UINib(nibName: "VideoTVC", bundle: nil)
+        tableview.register(videoNib, forCellReuseIdentifier: "VIDEO")
     }
 }
 
@@ -46,6 +48,9 @@ extension NewsFeedVC : UITableViewDataSource {
         {
         case 1:
             print("Video")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as! VideoTVC
+            cell.item = vm.itemAt(indexPath)
+            return cell
             
         case 2:
             print("Fact")
