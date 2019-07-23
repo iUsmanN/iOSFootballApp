@@ -401,21 +401,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izG-YI-bqi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-FR-PMq">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.8980392157" green="0.38837811960000002" blue="0.28638955030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TDU-FR-PMq" firstAttribute="leading" secondItem="2bh-JC-esx" secondAttribute="leading" id="BOc-IF-Gxb"/>
+                            <constraint firstAttribute="bottom" secondItem="izG-YI-bqi" secondAttribute="bottom" id="Vii-PG-BYM"/>
                             <constraint firstItem="TDU-FR-PMq" firstAttribute="top" secondItem="2bh-JC-esx" secondAttribute="top" id="a4T-xL-CUi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TDU-FR-PMq" secondAttribute="bottom" id="gjG-ar-qV1"/>
+                            <constraint firstItem="2bh-JC-esx" firstAttribute="trailing" secondItem="izG-YI-bqi" secondAttribute="trailing" id="hB8-ic-tX9"/>
                             <constraint firstItem="2bh-JC-esx" firstAttribute="trailing" secondItem="TDU-FR-PMq" secondAttribute="trailing" id="q7J-uu-Kff"/>
+                            <constraint firstItem="izG-YI-bqi" firstAttribute="top" secondItem="QnO-aE-nvS" secondAttribute="top" id="tJ3-b2-zTm"/>
+                            <constraint firstItem="izG-YI-bqi" firstAttribute="leading" secondItem="2bh-JC-esx" secondAttribute="leading" id="wpe-kY-enL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2bh-JC-esx"/>
                     </view>
                     <navigationItem key="navigationItem" title="News Feed" id="vvY-LX-SIr"/>
+                    <connections>
+                        <outlet property="tableview" destination="TDU-FR-PMq" id="b66-gf-mpD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xv7-JE-fNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -685,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESo-nN-9lw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4835" y="2170"/>
+            <point key="canvasLocation" x="6562" y="1260"/>
         </scene>
         <!--Players-->
         <scene sceneID="Q1x-d7-jdl">

@@ -44,6 +44,8 @@
 		4A82D90422E4A58600056949 /* PlayersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90322E4A58600056949 /* PlayersTVC.swift */; };
 		4A82D90622E5B8D400056949 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90522E5B8D400056949 /* DataManager.swift */; };
 		4A82D90822E5BDD200056949 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90722E5BDD200056949 /* SplashVC.swift */; };
+		4A82D90B22E5D71A00056949 /* FactTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D90922E5D71A00056949 /* FactTVC.swift */; };
+		4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D90A22E5D71A00056949 /* FactTVC.xib */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		4A82D90322E4A58600056949 /* PlayersTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTVC.swift; sourceTree = "<group>"; };
 		4A82D90522E5B8D400056949 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4A82D90722E5BDD200056949 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		4A82D90922E5D71A00056949 /* FactTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTVC.swift; sourceTree = "<group>"; };
+		4A82D90A22E5D71A00056949 /* FactTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactTVC.xib; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +252,8 @@
 				4A82D8E322DEF45300056949 /* GalleryCollectionViewCell.xib */,
 				4A82D8E622DF3E8A00056949 /* RankingTableViewCell.swift */,
 				4A82D90322E4A58600056949 /* PlayersTVC.swift */,
+				4A82D90922E5D71A00056949 /* FactTVC.swift */,
+				4A82D90A22E5D71A00056949 /* FactTVC.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A45254A22DC59EF00A6F381 /* LaunchScreen.storyboard in Resources */,
+				4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */,
 				4A82D8C222DC8F0800056949 /* GoogleService-Info.plist in Resources */,
 				4A45254722DC59EF00A6F381 /* Assets.xcassets in Resources */,
 				4A82D8E522DEF45300056949 /* GalleryCollectionViewCell.xib in Resources */,
@@ -455,6 +462,7 @@
 				4A82D8CB22DC9AE000056949 /* NewsFeedItem.swift in Sources */,
 				4A82D8F822E4688600056949 /* DetailsVC.swift in Sources */,
 				4A82D8FC22E4A21100056949 /* PlayerItem.swift in Sources */,
+				4A82D90B22E5D71A00056949 /* FactTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

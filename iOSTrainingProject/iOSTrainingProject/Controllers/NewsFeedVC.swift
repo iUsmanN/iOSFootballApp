@@ -11,13 +11,54 @@ import UIKit
 class NewsFeedVC: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
-    var vm:NewsFeedVM?
+    var vm = NewsFeedVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNewsFeed()
         // Do any additional setup after loading the view.
         vm = NewsFeedVM()
-        vm?.getData()
+        vm.getData()
+    }
+    
+    func setupNewsFeed()
+    {
+        tableview.dataSource = self
+        tableview.backgroundColor = UIColor.clear
+        let nib = UINib(nibName: "FactTVC", bundle: nil)
+        tableview.register(nib, forCellReuseIdentifier: "FACT")
+    }
+}
+
+extension NewsFeedVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vm.numberOfItems(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item : NewsFeedItem = vm.itemAt(indexPath)
+        
+        switch item.type
+        {
+        case 1:
+            print("Video")
+            
+        case 2:
+            print("Fact")
+            let cell = tableview.dequeueReusableCell(withIdentifier: "FACT", for: indexPath) as! FactTVC
+            cell.item = vm.itemAt(indexPath)
+            cell.backgroundColor = UIColor.clear
+            return cell
+            
+        case 3:
+            print("News Item")
+            
+        default:
+            print("Error in classifying NF Item")
+        }
+        var cell : UITableViewCell = UITableViewCell()
+        return cell;
     }
 }
