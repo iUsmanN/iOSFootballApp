@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gallery-->
+        <!--Gallery View Controller-->
         <scene sceneID="ZCm-C4-ozs">
             <objects>
                 <viewController id="2vc-vb-T8s" customClass="GalleryViewController" customModule="iOSTrainingProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PCs-2m-tTd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kUg-Av-gP7">
                                     <size key="itemSize" width="50" height="50"/>
@@ -48,14 +48,29 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iur-1Z-HE7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gallery" image="GalleryIcon" id="5DX-8l-1Xk"/>
+                    <navigationItem key="navigationItem" id="NPs-pR-ZRy"/>
                     <connections>
                         <outlet property="CollectionView" destination="PCs-2m-tTd" id="TBh-8t-qXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waq-vR-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541" y="84"/>
+            <point key="canvasLocation" x="2629" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="glk-Xb-f1s">
+            <objects>
+                <viewController id="bzh-jw-6Pl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lQ5-54-bba">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2yf-wY-hav"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vez-4Q-anK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3454" y="84"/>
         </scene>
         <!--Teams Ranking-->
         <scene sceneID="6Vc-f5-M71">
@@ -457,7 +472,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="aEQ-2b-2s9" kind="relationship" relationship="viewControllers" id="FIr-l9-ncS"/>
-                        <segue destination="2vc-vb-T8s" kind="relationship" relationship="viewControllers" id="iju-7m-4pq"/>
+                        <segue destination="l5z-Fb-X5c" kind="relationship" relationship="viewControllers" id="iju-7m-4pq"/>
                         <segue destination="fDr-Hh-GXc" kind="relationship" relationship="viewControllers" id="2mj-gU-aro"/>
                         <segue destination="2Q1-CE-ZUr" kind="relationship" relationship="viewControllers" id="FFv-nC-c5v"/>
                         <segue destination="Knu-4a-veI" kind="relationship" relationship="viewControllers" id="WNf-Wh-0iH"/>
@@ -759,6 +774,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ia-rA-xGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1486" y="3343"/>
+        </scene>
+        <!--Gallery-->
+        <scene sceneID="dyA-Dh-B9y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l5z-Fb-X5c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gallery" image="GalleryIcon" id="5DX-8l-1Xk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L4u-ly-jgs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2vc-vb-T8s" kind="relationship" relationship="rootViewController" id="B65-pk-AvD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcy-8G-IB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5797101449277" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>

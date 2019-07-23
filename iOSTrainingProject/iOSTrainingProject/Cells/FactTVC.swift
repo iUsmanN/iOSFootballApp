@@ -16,6 +16,7 @@ class FactTVC: UITableViewCell, ImageManager {
     @IBOutlet weak var factImage: UIImageView!
     
     var item: NewsFeedItem?
+    var shareDelegate: ShareItemDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,11 @@ class FactTVC: UITableViewCell, ImageManager {
         // Configure the view for the selected state
         setupCell()
     }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        shareDelegate?.newsFeedItemShared(input: item)
+    }
+    
 }
 
 extension FactTVC {

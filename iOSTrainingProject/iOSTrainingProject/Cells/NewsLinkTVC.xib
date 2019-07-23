@@ -22,7 +22,7 @@
                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd4-n3-rrL">
                         <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dln-Zc-36X">
-                            <rect key="frame" x="0.0" y="0.0" width="318" height="228"/>
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-nd-CCU">
@@ -48,6 +48,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-mk-Hg2">
                                             <rect key="frame" x="178.5" y="0.0" width="123.5" height="30"/>
                                             <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HYw-Rp-Y6f"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -83,9 +86,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imageHere" destination="cEC-nd-CCU" id="868-0o-JIm"/>
-                <outlet property="readMoreButton" destination="xmg-rY-LM2" id="jHd-em-DXr"/>
-                <outlet property="shareButton" destination="Cxs-mk-Hg2" id="7kw-jm-o0I"/>
+                <outlet property="imageHere" destination="cEC-nd-CCU" id="I2d-Wf-SKC"/>
                 <outlet property="titleHere" destination="Erl-nm-KdO" id="fwI-rZ-8F3"/>
             </connections>
             <point key="canvasLocation" x="23.188405797101453" y="103.45982142857143"/>

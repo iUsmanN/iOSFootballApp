@@ -15,6 +15,7 @@ class VideoTVC: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     
     var item: NewsFeedItem?
+    var shareDelegate: ShareItemDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +32,10 @@ class VideoTVC: UITableViewCell {
         if let videoUrl = item?.url {
             videoHere.load(withVideoId: videoUrl, playerVars: ["playsinline" : 1])
         }
-        
         title.text = item?.title
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        shareDelegate?.newsFeedItemShared(input: item)
+    }
 }

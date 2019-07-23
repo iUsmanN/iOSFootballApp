@@ -50,6 +50,7 @@ extension NewsFeedVC : UITableViewDataSource {
             print("Video")
             let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as! VideoTVC
             cell.item = vm.itemAt(indexPath)
+            cell.shareDelegate = self
             return cell
             
         case 2:
@@ -57,18 +58,29 @@ extension NewsFeedVC : UITableViewDataSource {
             let cell = tableview.dequeueReusableCell(withIdentifier: "FACT", for: indexPath) as! FactTVC
             cell.item = vm.itemAt(indexPath)
             cell.backgroundColor = UIColor.clear
+            cell.shareDelegate = self
             return cell
             
         case 3:
             print("News Item")
             let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as! NewsLinkTVC
             cell.item = vm.itemAt(indexPath)
+            cell.shareDelegate = self
             return cell
             
         default:
             print("Error in classifying NF Item")
         }
-        var cell : UITableViewCell = UITableViewCell()
+        let cell : UITableViewCell = UITableViewCell()
         return cell;
+    }
+}
+
+extension NewsFeedVC : ShareItemDelegate {
+    func newsFeedItemShared(input: NewsFeedItem?) {
+        if let item = input {
+            let vc = UIActivityViewController(activityItems: [item.title as Any, item.url as Any], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
+        }
     }
 }

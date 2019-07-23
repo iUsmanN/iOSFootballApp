@@ -65,6 +65,14 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
         cell.item = vm?.galleryItem(at: indexPath)
+        cell.delegate = self
         return cell
+    }
+}
+
+
+extension GalleryViewController : DoubleTapDelegate {
+    func itemDoubleTapped(vc: UIActivityViewController) {
+        present(vc, animated: true, completion: nil)
     }
 }

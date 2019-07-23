@@ -52,6 +52,9 @@
                                             <state key="normal" title="Share">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dxF-kr-GX8"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

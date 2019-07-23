@@ -13,10 +13,9 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     
     @IBOutlet weak var imageHere        : UIImageView!
     @IBOutlet weak var titleHere        : UILabel!
-    @IBOutlet weak var readMoreButton   : UIButton!
-    @IBOutlet weak var shareButton      : UIButton!
     
     var item: NewsFeedItem?
+    var shareDelegate: ShareItemDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,5 +56,9 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     
     func setImage(input: UIImage?) {
         DispatchQueue.main.async { self.imageHere.image = input }
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        shareDelegate?.newsFeedItemShared(input: item)
     }
 }

@@ -35,6 +35,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-WY-8ge">
                                             <rect key="frame" x="188" y="0.0" width="111" height="30"/>
                                             <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vfw-Dm-LY3"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
