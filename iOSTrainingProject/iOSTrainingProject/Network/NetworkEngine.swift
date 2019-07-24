@@ -49,3 +49,29 @@ func filterItems<T>(_ input: [T?]) -> [T] {
     }
     return res
 }
+
+
+extension NetworkEngine {
+    func weatherQuery(completion: @escaping ([CityItem]?)->())
+    {
+        var items: [CityItem]?
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        if let url = URL(string: "https://www.metaweather.com/api/location/search/?query=san") {
+            _ = session.dataTask(with: url) {
+                data, response, error in
+                
+                guard let data = data else { return }
+                
+                do {
+                    items = try JSONDecoder().decode([CityItem].self, from: data)
+                    completion(items)
+                } catch {
+                    print("Error fetching cities")
+                }
+                
+            }.resume()
+        }
+    }
+}
