@@ -16,6 +16,7 @@ class VideoTVC: UITableViewCell {
     
     var item: NewsFeedItem?
     var shareDelegate: ShareItemDelegate?
+    var descriptionDelegate: ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,5 +38,8 @@ class VideoTVC: UITableViewCell {
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         shareDelegate?.newsFeedItemShared(input: item)
+    }
+    @IBAction func descriptionButtonPressed(_ sender: Any) {
+        descriptionDelegate?.showDescription(input: item)
     }
 }

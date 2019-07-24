@@ -12,6 +12,7 @@ class NewsFeedVC: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     var vm = NewsFeedVM()
+    var segueItem: NewsFeedItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,14 @@ class NewsFeedVC: UIViewController {
     }
 }
 
+//struct TPConstants {
+//    private init(){}
+//     struct Nibs {
+//        private init(){}
+//        static let FACT_TVC = UINib(nibName: "FactTVC", bundle: nil)
+//    }
+//}
+
 extension NewsFeedVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.numberOfItems(in: section)
@@ -50,7 +59,9 @@ extension NewsFeedVC : UITableViewDataSource {
             print("Video")
             let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as! VideoTVC
             cell.item = vm.itemAt(indexPath)
+            cell.backgroundColor = UIColor.clear
             cell.shareDelegate = self
+            cell.descriptionDelegate = self
             return cell
             
         case 2:
@@ -59,6 +70,7 @@ extension NewsFeedVC : UITableViewDataSource {
             cell.item = vm.itemAt(indexPath)
             cell.backgroundColor = UIColor.clear
             cell.shareDelegate = self
+            cell.descriptionDelegate = self
             return cell
             
         case 3:
@@ -66,6 +78,8 @@ extension NewsFeedVC : UITableViewDataSource {
             let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as! NewsLinkTVC
             cell.item = vm.itemAt(indexPath)
             cell.shareDelegate = self
+            cell.descriptionDelegate = self
+            cell.backgroundColor = UIColor.clear
             return cell
             
         default:
@@ -81,6 +95,36 @@ extension NewsFeedVC : ShareItemDelegate {
         if let item = input {
             let vc = UIActivityViewController(activityItems: [item.title as Any, item.url as Any], applicationActivities: [])
         present(vc, animated: true, completion: nil)
+        }
+    }
+}
+
+extension NewsFeedVC : ShowDescriptionDelegate {
+    func showDescription(input: NewsFeedItem?) {
+        guard let input = input else { return }
+        
+        if input.type == 1 {
+            print("Video")
+            segueItem = input
+            self.performSegue(withIdentifier: "showVideoDetails", sender: self)
+        } else {
+            print("Fact or NF")
+            segueItem = input
+            self.performSegue(withIdentifier: "showItemDetails", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showVideoDetails" {
+            print("Video Segue")
+            if let vc = segue.destination as? VideoDetailsVC {
+                vc.item = segueItem
+            }
+        } else if segue.identifier == "showItemDetails" {
+            print("Fact or NF Segue")
+            if let vc = segue.destination as? ItemDetailsVC {
+                vc.item = segueItem
+            }
         }
     }
 }

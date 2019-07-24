@@ -38,14 +38,12 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
         }
         
         //Set Image
-        if let imagestring = self.item?.flag
-        {
+        if let imagestring = self.item?.flag {
             loadImage(imagestring, completion: setImage(input:))
         }
         
         //Set position image
-        if let pos = item?.position
-        {
+        if let pos = item?.position {
             if(pos>0) {
                 position.image      = UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
                 position.tintColor  = getColor(0,0.7,0,1)
@@ -61,9 +59,9 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
     
     func setCALayer()
     {
-        layer.borderColor   = UIColor.black.cgColor
-        layer.borderWidth   = CGFloat(1)
-        layer.cornerRadius  = CGFloat(10)
+//        layer.borderColor   = UIColor.black.cgColor
+//        layer.borderWidth   = CGFloat(1)
+//        layer.cornerRadius  = CGFloat(10)
     }
     
     func setImage(input: UIImage?) {

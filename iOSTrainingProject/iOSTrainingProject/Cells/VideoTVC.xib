@@ -30,11 +30,18 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-5e-CLT">
                                             <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
-                                            <state key="normal" title="Description"/>
+                                            <state key="normal" title="Description">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="descriptionButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eeb-gz-llI"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-WY-8ge">
                                             <rect key="frame" x="188" y="0.0" width="111" height="30"/>
-                                            <state key="normal" title="Share"/>
+                                            <state key="normal" title="Share">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
                                             <connections>
                                                 <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vfw-Dm-LY3"/>
                                             </connections>
@@ -78,7 +85,7 @@
                                 <constraint firstItem="aSZ-n2-BG3" firstAttribute="leading" secondItem="4VO-Ch-zyO" secondAttribute="leading" id="tZt-jh-4te"/>
                             </constraints>
                         </view>
-                        <blurEffect style="dark"/>
+                        <blurEffect style="light"/>
                     </visualEffectView>
                 </subviews>
                 <constraints>

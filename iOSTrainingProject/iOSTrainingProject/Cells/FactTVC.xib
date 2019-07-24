@@ -20,12 +20,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pK1-sd-xcc">
-                        <rect key="frame" x="0.0" y="0.0" width="327" height="162"/>
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="162.5"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PgQ-MC-7d5">
                             <rect key="frame" x="0.0" y="0.0" width="327" height="162"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ronaldo" translatesAutoresizingMaskIntoConstraints="NO" id="nQT-oD-M96" userLabel="FactImage">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk flag" translatesAutoresizingMaskIntoConstraints="NO" id="nQT-oD-M96" userLabel="FactImage">
                                     <rect key="frame" x="5" y="5" width="317" height="120"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="bjL-dW-gz0"/>
@@ -46,6 +46,9 @@
                                             <state key="normal" title="Read more">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="descriptionButtonPresssed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4ct-61-eJp"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3p-c0-bev">
                                             <rect key="frame" x="185.5" y="0.0" width="125.5" height="30"/>
@@ -78,7 +81,7 @@
                                 <constraint firstItem="gVl-9I-Fcc" firstAttribute="leading" secondItem="PgQ-MC-7d5" secondAttribute="leading" constant="8" id="zta-xH-dAz"/>
                             </constraints>
                         </view>
-                        <blurEffect style="dark"/>
+                        <blurEffect style="light"/>
                     </visualEffectView>
                 </subviews>
                 <constraints>
@@ -100,6 +103,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ronaldo" width="768" height="1024"/>
+        <image name="pk flag" width="523.5" height="349"/>
     </resources>
 </document>

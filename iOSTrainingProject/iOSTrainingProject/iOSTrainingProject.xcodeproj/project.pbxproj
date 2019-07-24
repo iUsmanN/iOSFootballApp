@@ -51,7 +51,9 @@
 		4A82D91222E6E63000056949 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91122E6E63000056949 /* ImageManager.swift */; };
 		4A82D91522E70EFE00056949 /* VideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91322E70EFE00056949 /* VideoTVC.swift */; };
 		4A82D91622E70EFE00056949 /* VideoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D91422E70EFE00056949 /* VideoTVC.xib */; };
-		4A82D91822E7326A00056949 /* ShareProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91722E7326A00056949 /* ShareProtocols.swift */; };
+		4A82D91822E7326A00056949 /* UtilityProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91722E7326A00056949 /* UtilityProtocols.swift */; };
+		4A82D91A22E85A6100056949 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91922E85A6100056949 /* ItemDetailsVC.swift */; };
+		4A82D91C22E85A7900056949 /* VideoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D91B22E85A7900056949 /* VideoDetailsVC.swift */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +116,9 @@
 		4A82D91122E6E63000056949 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		4A82D91322E70EFE00056949 /* VideoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTVC.swift; sourceTree = "<group>"; };
 		4A82D91422E70EFE00056949 /* VideoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTVC.xib; sourceTree = "<group>"; };
-		4A82D91722E7326A00056949 /* ShareProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProtocols.swift; sourceTree = "<group>"; };
+		4A82D91722E7326A00056949 /* UtilityProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityProtocols.swift; sourceTree = "<group>"; };
+		4A82D91922E85A6100056949 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		4A82D91B22E85A7900056949 /* VideoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsVC.swift; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +212,7 @@
 				4A82D8C722DC9A1600056949 /* Network Protocols.swift */,
 				4A82D8F922E468EC00056949 /* HasDetails.swift */,
 				4A82D91122E6E63000056949 /* ImageManager.swift */,
-				4A82D91722E7326A00056949 /* ShareProtocols.swift */,
+				4A82D91722E7326A00056949 /* UtilityProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -244,6 +248,8 @@
 				4A82D8F722E4688600056949 /* DetailsVC.swift */,
 				4A82D90122E4A44F00056949 /* PlayersVC.swift */,
 				4A82D90722E5BDD200056949 /* SplashVC.swift */,
+				4A82D91922E85A6100056949 /* ItemDetailsVC.swift */,
+				4A82D91B22E85A7900056949 /* VideoDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				4A82D8C522DC99D200056949 /* NetworkLayer.swift in Sources */,
 				4A82D8CE22DCAC0700056949 /* NewsFeedVM.swift in Sources */,
 				4A82D91222E6E63000056949 /* ImageManager.swift in Sources */,
+				4A82D91C22E85A7900056949 /* VideoDetailsVC.swift in Sources */,
 				4A82D8C822DC9A1600056949 /* Network Protocols.swift in Sources */,
 				4A82D8EB22DF3FCC00056949 /* TeamsVC.swift in Sources */,
 				4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */,
@@ -476,12 +483,13 @@
 				4A82D90422E4A58600056949 /* PlayersTVC.swift in Sources */,
 				4A82D8D322DDA83F00056949 /* NewsFeedVC.swift in Sources */,
 				4A82D8D822DDE52400056949 /* NetworkEngine.swift in Sources */,
+				4A82D91A22E85A6100056949 /* ItemDetailsVC.swift in Sources */,
 				4A82D8F122DF40BE00056949 /* RankingItem.swift in Sources */,
 				4A82D8E122DDEC1D00056949 /* GalleryItem.swift in Sources */,
 				4A82D8ED22DF400A00056949 /* TeamsVM.swift in Sources */,
 				4A45254022DC59EE00A6F381 /* AppDelegate.swift in Sources */,
 				4A82D8DF22DDEB5700056949 /* GalleryService.swift in Sources */,
-				4A82D91822E7326A00056949 /* ShareProtocols.swift in Sources */,
+				4A82D91822E7326A00056949 /* UtilityProtocols.swift in Sources */,
 				4A82D8D622DDE4CD00056949 /* NewsFeedService.swift in Sources */,
 				4A82D8CB22DC9AE000056949 /* NewsFeedItem.swift in Sources */,
 				4A82D8F822E4688600056949 /* DetailsVC.swift in Sources */,

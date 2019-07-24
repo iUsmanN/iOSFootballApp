@@ -16,6 +16,7 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     
     var item: NewsFeedItem?
     var shareDelegate: ShareItemDelegate?
+    var descriptionDelegate: ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +26,7 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
+//        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
         // Configure the view for the selected state
         setUpCell()
     }
@@ -60,5 +61,9 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         shareDelegate?.newsFeedItemShared(input: item)
+    }
+    
+    @IBAction func descriptionButtonPressed(_ sender: Any) {
+        descriptionDelegate?.showDescription(input: item)
     }
 }

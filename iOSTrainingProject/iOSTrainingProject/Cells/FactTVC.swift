@@ -17,17 +17,14 @@ class FactTVC: UITableViewCell, ImageManager {
     
     var item: NewsFeedItem?
     var shareDelegate: ShareItemDelegate?
+    var descriptionDelegate: ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
-        // Configure the view for the selected state
         setupCell()
     }
     
@@ -35,14 +32,19 @@ class FactTVC: UITableViewCell, ImageManager {
         shareDelegate?.newsFeedItemShared(input: item)
     }
     
+    @IBAction func descriptionButtonPresssed(_ sender: Any) {
+        descriptionDelegate?.showDescription(input: item)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
 }
 
 extension FactTVC {
     func setupCell() {
         title.text = item?.title
         
-        if let imageString = item?.url
-        {
+        if let imageString = item?.url {
             loadImage(imageString, completion: setImage(input:))
         }
     }

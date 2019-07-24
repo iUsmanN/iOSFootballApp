@@ -56,7 +56,7 @@ extension GalleryCollectionViewCell {
     @objc func getImage(recogniser: UIGestureRecognizer)
     {
         print("Share Image")
-        let vc = UIActivityViewController(activityItems: [imagehere.image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [imagehere.image as Any], applicationActivities: [])
         delegate?.itemDoubleTapped(vc: vc)
     }
 }

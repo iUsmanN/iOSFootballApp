@@ -15,8 +15,7 @@ class PlayersVM: PlayersService {
     var items = [PlayerItem]() {
         didSet{
             print("Set player items")
-            
-            if let reloadTableView = reloadTableView { reloadTableView() }
+            reloadTableView?()
         }
     }
     

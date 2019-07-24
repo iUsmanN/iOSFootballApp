@@ -20,9 +20,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd4-n3-rrL">
-                        <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="318" height="228"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dln-Zc-36X">
-                            <rect key="frame" x="0.0" y="0.0" width="318" height="228.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="228"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-nd-CCU">
@@ -43,11 +43,18 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-rY-LM2">
                                             <rect key="frame" x="0.0" y="0.0" width="123.5" height="30"/>
-                                            <state key="normal" title="Read More"/>
+                                            <state key="normal" title="Read More">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="descriptionButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sTu-92-U37"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-mk-Hg2">
                                             <rect key="frame" x="178.5" y="0.0" width="123.5" height="30"/>
-                                            <state key="normal" title="Share"/>
+                                            <state key="normal" title="Share">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
                                             <connections>
                                                 <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HYw-Rp-Y6f"/>
                                             </connections>
@@ -73,7 +80,7 @@
                                 <constraint firstItem="cEC-nd-CCU" firstAttribute="top" secondItem="Dln-Zc-36X" secondAttribute="top" constant="8" id="q6G-Mo-i46"/>
                             </constraints>
                         </view>
-                        <blurEffect style="light"/>
+                        <blurEffect style="extraLight"/>
                     </visualEffectView>
                 </subviews>
                 <constraints>

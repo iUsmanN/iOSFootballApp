@@ -13,10 +13,7 @@ class TeamsVM : TeamsService {
     var items       = [RankingItem]() {
         didSet {
             if(items.count <= 13) {
-                if let tableRefreshClosure = tableRefreshClosure {
-                    tableRefreshClosure()
-                    print(items.count)
-                }
+                tableRefreshClosure?()
             }
         }
     }

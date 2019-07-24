@@ -16,3 +16,7 @@ protocol DoubleTapDelegate {
 protocol ShareItemDelegate {
     func newsFeedItemShared(input:NewsFeedItem?)
 }
+
+protocol ShowDescriptionDelegate {
+    func showDescription(input:NewsFeedItem?)
+}

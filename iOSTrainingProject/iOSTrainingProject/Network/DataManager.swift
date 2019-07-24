@@ -24,6 +24,7 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
         getData(0, 13, completion: setPlayerItems(_:))
     }
     
+    @discardableResult
     func getNewsFeedItems() -> [NewsFeedItem] {
         return newsFeedItems
     }
