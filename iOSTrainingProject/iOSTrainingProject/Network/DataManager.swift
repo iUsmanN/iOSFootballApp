@@ -18,7 +18,7 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     var playerItems     = [PlayerItem]()
     
     private init() {
-        getNFData(1, 6, completion: setNewsFeedItems(_:))
+        getNFData(1, 4, completion: setNewsFeedItems(_:))
         getGalleryData(0, 6, completion: setGalleryItems(_:))
         getData(0, 20, completion: setTeamItems(_:))
         getData(0, 13, completion: setPlayerItems(_:))

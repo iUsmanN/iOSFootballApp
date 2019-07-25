@@ -18,14 +18,12 @@ class NewsFeedVC: UIViewController {
         super.viewDidLoad()
 
         setupNewsFeed()
-        vm.getData()
+        vm.getData(pagination: updateTableView)
     }
     
     func setupNewsFeed()
     {
         tableview.dataSource = self
-        tableview.prefetchDataSource = self
-        tableview.delegate = self
         tableview.backgroundColor = UIColor.clear
         let factNib = UINib(nibName: "FactTVC", bundle: nil)
         tableview.register(factNib, forCellReuseIdentifier: "FACT")
@@ -52,7 +50,7 @@ extension NewsFeedVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //pagination code here
-        vm.getPaginatedData(indexPath: indexPath, completion: updateTableView)
+        vm.getPaginatedData(indexPath: indexPath)
         
         let item : NewsFeedItem = vm.itemAt(indexPath)
         
@@ -132,21 +130,12 @@ extension NewsFeedVC : ShowDescriptionDelegate {
     }
 }
 
-extension NewsFeedVC : UITableViewDelegate, UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        print("prefetchRowsAt \(indexPaths)")
-    }
+extension NewsFeedVC {
     
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("-> Will display row at" + String(indexPath.row))
-    }
-    
-    func updateTableView()
-    {
+    func updateTableView(inputCount: Int) {
         tableview.beginUpdates()
-        for i in (1...3).reversed() { //replace 3 by number of inserted rows
-        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - i, section: 0)], with: .automatic)
+        for i in (1...inputCount).reversed() {
+        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - i, section: 0)], with: .bottom)
         }
         tableview.endUpdates()
     }

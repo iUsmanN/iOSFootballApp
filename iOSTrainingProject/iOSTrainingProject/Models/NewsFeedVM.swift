@@ -13,19 +13,18 @@ class NewsFeedVM : NewsFeedService {
     let total           : Int = 10
     let networkLayer    : NetworkLayer = NetworkLayer()
     var items = [NewsFeedItem]() { didSet { print(items.count) }}
-    var paginationClosure: (()->())?
-    var first = true
-    var cursor = 5
+    var paginationClosure: ((Int)->())?
     
-    func getData() {
+    func getData(pagination: @escaping (Int)->()) {
         items = DataManager.shared.getNewsFeedItems()
+        paginationClosure = pagination
     }
     
     func SetData(_ input: [NewsFeedItem]) {
         items.append(contentsOf: input)
         print("Items Set")
         if let closure = paginationClosure {
-        closure()
+            closure(input.count)
         }
     }
     
@@ -37,20 +36,10 @@ class NewsFeedVM : NewsFeedService {
         return items[indexPath.row]
     }
     
-    func getPaginatedData(indexPath: IndexPath, completion: @escaping ()->()) {
-
-        print("->" + String(indexPath.row) + ", " + String(items.count))
-        
+    func getPaginatedData(indexPath: IndexPath) {
         if items.count < total, indexPath.row - items.count == -1 {
-            if !first {
             print("-> Get Data")
-            getNFData(items.count + 1, min(3, total-items.count), completion: SetData(_:))
-            
-            //setnumberofitems
-            paginationClosure = completion
-            } else {
-                first = false
-            }
+            getNFData(items.count + 1, min(2, total-items.count), completion: SetData(_:))
         }
     }
 }
