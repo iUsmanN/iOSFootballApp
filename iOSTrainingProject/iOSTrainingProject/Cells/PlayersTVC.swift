@@ -19,8 +19,6 @@ class PlayersTVC: UITableViewCell, Color, ImageManager {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        print("super.awakeFromNib()")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,12 +36,11 @@ class PlayersTVC: UITableViewCell, Color, ImageManager {
         
         //Set Flag image
         if let imageString = item?.image {
-            loadImage(imageString, completion: setImage(input:))
+            ImageCache.shared.loadImage(imageString, completion: setImage(input:))
         }
         
         //Set position image
-        if let pos = item?.position
-        {
+        if let pos = item?.position {
             if(pos>0) {
                 position.image      = UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
                 position.tintColor  = getColor(0,0.7,0,1)

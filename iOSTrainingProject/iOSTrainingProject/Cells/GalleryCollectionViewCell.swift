@@ -27,13 +27,12 @@ class GalleryCollectionViewCell: UICollectionViewCell, ImageManager {
         
         layer.cornerRadius = 10
         layer.shadowOffset = CGSize(width: 10, height: 10)
-        
         setupDoubleTap()
     }
     
     func setupCell() {
         if let url = item?.url {
-            loadImage(url, completion: setImage(input:))
+            ImageCache.shared.loadImage(url, completion: setImage(input:))
         }
         captionhere.text = item?.caption
     }
@@ -45,16 +44,14 @@ class GalleryCollectionViewCell: UICollectionViewCell, ImageManager {
 
 extension GalleryCollectionViewCell {
     
-    func setupDoubleTap()
-    {
+    func setupDoubleTap() {
         let shareTap = UITapGestureRecognizer(target: self, action: #selector(getImage(recogniser:)))
         shareTap.numberOfTapsRequired = 2
         imagehere.addGestureRecognizer(shareTap)
         
     }
     
-    @objc func getImage(recogniser: UIGestureRecognizer)
-    {
+    @objc func getImage(recogniser: UIGestureRecognizer) {
         print("Share Image")
         let vc = UIActivityViewController(activityItems: [imagehere.image as Any], applicationActivities: [])
         delegate?.itemDoubleTapped(vc: vc)

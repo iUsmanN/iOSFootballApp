@@ -25,7 +25,7 @@ class ItemDetailsVC: UIViewController, ImageManager {
         
         if item?.type == 2 {
             if let url = item?.url {
-            loadImage(url, completion: setImage(input:))
+            ImageCache.shared.loadImage(url, completion: setImage(input:))
             }
         }
     }

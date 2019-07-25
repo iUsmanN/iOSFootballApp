@@ -14,30 +14,26 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     @IBOutlet weak var imageHere        : UIImageView!
     @IBOutlet weak var titleHere        : UILabel!
     
-    var item: NewsFeedItem?
-    var shareDelegate: ShareItemDelegate?
-    var descriptionDelegate: ShowDescriptionDelegate?
+    var item                            : NewsFeedItem?
+    var shareDelegate                   : ShareItemDelegate?
+    var descriptionDelegate             : ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-//        layer.borderWidth = CGFloat(5); layer.borderColor = UIColor.black.cgColor
-        // Configure the view for the selected state
         setUpCell()
     }
     
     func setUpCell() {
         
         let swiftLinkPreviewObj = SwiftLinkPreview(
-            session: URLSession.shared,
-            workQueue: SwiftLinkPreview.defaultWorkQueue,
-            responseQueue: DispatchQueue.main,
-            cache: DisabledCache.instance)
+            session         : URLSession.shared,
+            workQueue       : SwiftLinkPreview.defaultWorkQueue,
+            responseQueue   : DispatchQueue.main,
+            cache           : DisabledCache.instance)
         
         if let stringUrl = item?.url {
             swiftLinkPreviewObj.preview(stringUrl, onSuccess: LinkPreviewSuccess(response:), onError: LinkPreviewFailure(error:))
@@ -47,7 +43,7 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
     
     func LinkPreviewSuccess(response: Response) {
         if let imageString = response.image {
-            loadImage(imageString, completion: setImage(input:))
+            ImageCache.shared.loadImage(imageString, completion: setImage(input:))
         }
     }
     

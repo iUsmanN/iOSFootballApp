@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 protocol ImageManager {
-    func loadImage(_ string: String, completion: @escaping (UIImage?)->())
+    func downloadImage(_ string: String, completion: @escaping (UIImage?)->())
 }
 
 extension ImageManager {
-    func loadImage(_ string: String, completion: @escaping (UIImage?)->()) {
+    func downloadImage(_ string: String, completion: @escaping (UIImage?)->()) {
         
         DispatchQueue.global(qos: .background).async {
             if let url = URL(string: string) {

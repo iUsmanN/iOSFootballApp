@@ -19,24 +19,20 @@ class PlayersVM: PlayersService {
         }
     }
     
-    func getData(closure: @escaping ()->())
-    {
+    func getData(closure: @escaping ()->()) {
         reloadTableView = closure
         items = DataManager.shared.getPlayerItems()
     }
     
-    func setData(_ input: [PlayerItem])
-    {
+    func setData(_ input: [PlayerItem]) {
         items.append(contentsOf: input)
     }
     
-    func getItem(at indexPath:IndexPath) -> PlayerItem
-    {
+    func getItem(at indexPath:IndexPath) -> PlayerItem {
         return items[indexPath.row]
     }
     
-    func getNumberOfRows(at section: Int) -> Int
-    {
+    func getNumberOfRows(at section: Int) -> Int {
         return items.count
     }
 }

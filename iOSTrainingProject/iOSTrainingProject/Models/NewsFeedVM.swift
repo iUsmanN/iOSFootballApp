@@ -27,8 +27,7 @@ class NewsFeedVM : NewsFeedService {
         return items.count
     }
     
-    func itemAt(_ indexPath: IndexPath) -> NewsFeedItem
-    {
+    func itemAt(_ indexPath: IndexPath) -> NewsFeedItem {
         return items[indexPath.row]
     }
 }

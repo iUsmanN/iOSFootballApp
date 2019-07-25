@@ -4,8 +4,6 @@
 //
 //  Created by Usman Nazir on 16/07/2019.
 //  Copyright © 2019 Usman Nazir. All rights reserved.
-//queryStarting(atValue: "3").queryLimited(toFirst: 5).
-//queryOrderedByKey().queryStarting(atValue: "2")
 
 import Foundation
 import Firebase

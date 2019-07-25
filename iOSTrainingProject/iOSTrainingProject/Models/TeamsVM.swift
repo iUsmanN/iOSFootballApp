@@ -40,12 +40,10 @@ class TeamsVM : TeamsService {
         return items[indexpath.row]
     }
     
-    func getPaginatedData(indexPath: IndexPath)
-    {
+    func getPaginatedData(indexPath: IndexPath) {
         print("indexPath: " + String(indexPath.row))
         
-        if (items.count - indexPath.row == 2)
-        {
+        if (items.count - indexPath.row == 2) {
             print("Getting data")
             getData(items.count, min(total - items.count, 3), completion: setData(_:))
         }

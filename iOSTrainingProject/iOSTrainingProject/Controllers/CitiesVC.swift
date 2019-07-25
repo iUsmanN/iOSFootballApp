@@ -17,7 +17,7 @@ class CitiesVC: UIViewController {
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         viewModel = CitiesVM(closure: {
-            self.tableView.reloadData()
+            DispatchQueue.main.async { self.tableView.reloadData() }
         })
         
         viewModel?.getCityData()

@@ -11,16 +11,15 @@ import youtube_ios_player_helper
 
 class VideoTVC: UITableViewCell {
     
-    @IBOutlet weak var videoHere: YTPlayerView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var videoHere    : YTPlayerView!
+    @IBOutlet weak var title        : UILabel!
     
-    var item: NewsFeedItem?
-    var shareDelegate: ShareItemDelegate?
-    var descriptionDelegate: ShowDescriptionDelegate?
+    var item                        : NewsFeedItem?
+    var shareDelegate               : ShareItemDelegate?
+    var descriptionDelegate         : ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

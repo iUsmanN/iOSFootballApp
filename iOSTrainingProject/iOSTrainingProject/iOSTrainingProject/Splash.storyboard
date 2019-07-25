@@ -21,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="Nsb-C3-dzI"/>
                     </view>
                     <connections>
-                        <segue destination="lgT-iI-kkc" kind="show" id="FEC-3R-fEx"/>
+                        <segue destination="lgT-iI-kkc" kind="show" identifier="segueToMain" id="FEC-3R-fEx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3v-WG-pf0" userLabel="First Responder" sceneMemberID="firstResponder"/>

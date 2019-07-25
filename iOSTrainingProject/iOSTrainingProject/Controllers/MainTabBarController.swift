@@ -13,7 +13,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -28,7 +27,6 @@ extension MainTabBarController: UITabBarControllerDelegate
         if fromView != toView {
             UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
         }
-        
         return true
     }
 }

@@ -21,13 +21,11 @@ class CitiesVM : NetworkEngine {
         reloadclosure = closure
     }
     
-    func getCityData()
-    {
+    func getCityData() {
       weatherQuery(completion: setItems(input:))
     }
     
-    func setItems(input: [CityItem]?)
-    {
+    func setItems(input: [CityItem]?) {
         if let input = input {
             items = input
         }

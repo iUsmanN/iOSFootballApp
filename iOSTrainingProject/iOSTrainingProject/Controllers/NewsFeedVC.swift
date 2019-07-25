@@ -18,7 +18,6 @@ class NewsFeedVC: UIViewController {
         super.viewDidLoad()
 
         setupNewsFeed()
-        // Do any additional setup after loading the view.
         vm = NewsFeedVM()
         vm.getData()
     }

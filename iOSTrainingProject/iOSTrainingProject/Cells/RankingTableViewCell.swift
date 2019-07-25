@@ -19,8 +19,6 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         setCALayer()
     }
     
@@ -39,7 +37,7 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
         
         //Set Image
         if let imagestring = self.item?.flag {
-            loadImage(imagestring, completion: setImage(input:))
+            ImageCache.shared.loadImage(imagestring, completion: setImage(input:))
         }
         
         //Set position image
@@ -57,11 +55,8 @@ class RankingTableViewCell: UITableViewCell, Color, ImageManager {
         }
     }
     
-    func setCALayer()
-    {
-//        layer.borderColor   = UIColor.black.cgColor
-//        layer.borderWidth   = CGFloat(1)
-//        layer.cornerRadius  = CGFloat(10)
+    func setCALayer() {
+        
     }
     
     func setImage(input: UIImage?) {

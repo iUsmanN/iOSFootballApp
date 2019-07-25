@@ -10,10 +10,10 @@ import UIKit
 
 class FactTVC: UITableViewCell, ImageManager {
     
-    @IBOutlet weak var readMore: UIButton!
-    @IBOutlet weak var share: UIButton!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var factImage: UIImageView!
+    @IBOutlet weak var readMore         : UIButton!
+    @IBOutlet weak var share            : UIButton!
+    @IBOutlet weak var title            : UILabel!
+    @IBOutlet weak var factImage        : UIImageView!
     
     var item: NewsFeedItem?
     var shareDelegate: ShareItemDelegate?
@@ -45,7 +45,7 @@ extension FactTVC {
         title.text = item?.title
         
         if let imageString = item?.url {
-            loadImage(imageString, completion: setImage(input:))
+            ImageCache.shared.loadImage(imageString, completion: setImage(input:))
         }
     }
     
