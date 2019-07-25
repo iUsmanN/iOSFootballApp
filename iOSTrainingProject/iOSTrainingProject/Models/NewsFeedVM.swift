@@ -15,6 +15,7 @@ class NewsFeedVM : NewsFeedService {
     var items = [NewsFeedItem]() { didSet { print(items.count) }}
     var paginationClosure: (()->())?
     var first = true
+    var cursor = 5
     
     func getData() {
         items = DataManager.shared.getNewsFeedItems()
@@ -43,7 +44,7 @@ class NewsFeedVM : NewsFeedService {
         if items.count < total, indexPath.row - items.count == -1 {
             if !first {
             print("-> Get Data")
-            getNFData(items.count + 1, min(1, total-items.count), completion: SetData(_:))
+            getNFData(items.count + 1, min(3, total-items.count), completion: SetData(_:))
             
             //setnumberofitems
             paginationClosure = completion

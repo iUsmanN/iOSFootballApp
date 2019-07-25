@@ -145,7 +145,9 @@ extension NewsFeedVC : UITableViewDelegate, UITableViewDataSourcePrefetching {
     func updateTableView()
     {
         tableview.beginUpdates()
-        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - 1, section: 0)], with: .automatic)
+        for i in (1...3).reversed() { //replace 3 by number of inserted rows
+        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - i, section: 0)], with: .automatic)
+        }
         tableview.endUpdates()
     }
 }

@@ -15,6 +15,6 @@ class SplashVC: UIViewController {
 
         // Do any additional setup after loading the view.
         DataManager.shared.getNewsFeedItems()
-        _ = DataManager.shared
+//        _ = DataManager.shared
     }
 }
