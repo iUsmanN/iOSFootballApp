@@ -18,13 +18,14 @@ class NewsFeedVC: UIViewController {
         super.viewDidLoad()
 
         setupNewsFeed()
-        vm = NewsFeedVM()
         vm.getData()
     }
     
     func setupNewsFeed()
     {
         tableview.dataSource = self
+        tableview.prefetchDataSource = self
+        tableview.delegate = self
         tableview.backgroundColor = UIColor.clear
         let factNib = UINib(nibName: "FactTVC", bundle: nil)
         tableview.register(factNib, forCellReuseIdentifier: "FACT")
@@ -49,6 +50,9 @@ extension NewsFeedVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //pagination code here
+        vm.getPaginatedData(indexPath: indexPath, completion: updateTableView)
         
         let item : NewsFeedItem = vm.itemAt(indexPath)
         
@@ -125,5 +129,23 @@ extension NewsFeedVC : ShowDescriptionDelegate {
                 vc.item = segueItem
             }
         }
+    }
+}
+
+extension NewsFeedVC : UITableViewDelegate, UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print("prefetchRowsAt \(indexPaths)")
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("-> Will display row at" + String(indexPath.row))
+    }
+    
+    func updateTableView()
+    {
+        tableview.beginUpdates()
+        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - 1, section: 0)], with: .automatic)
+        tableview.endUpdates()
     }
 }

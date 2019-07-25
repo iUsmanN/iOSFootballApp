@@ -9,7 +9,7 @@
 import Foundation
 
 class PlayersVM: PlayersService {
-    let total           : Int = 10
+    let total           : Int = 13
     var reloadTableView : (()->())?
     
     var items = [PlayerItem]() {
