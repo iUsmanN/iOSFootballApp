@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 struct ImageCache : ImageManager {
-    static let shared = ImageCache()
-    let imageCache = NSCache<NSString, UIImage>()
+    static let shared   = ImageCache()
+    let imageCache      = NSCache<NSString, UIImage>()
     
     private init() { }
     

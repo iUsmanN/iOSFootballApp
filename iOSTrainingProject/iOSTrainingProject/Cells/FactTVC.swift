@@ -15,9 +15,9 @@ class FactTVC: UITableViewCell, ImageManager {
     @IBOutlet weak var title            : UILabel!
     @IBOutlet weak var factImage        : UIImageView!
     
-    var item: NewsFeedItem?
-    var shareDelegate: ShareItemDelegate?
-    var descriptionDelegate: ShowDescriptionDelegate?
+    var item                            : NewsFeedItem?
+    var shareDelegate                   : ShareItemDelegate?
+    var descriptionDelegate             : ShowDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

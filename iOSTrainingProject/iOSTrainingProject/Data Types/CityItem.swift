@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct CityItem : Codable {
-    var title: String?
-    var location_type: String?
-    var woeid: Int?
-    var latt_long: String?
+struct CityItem         : Codable {
+    var title           : String?
+    var location_type   : String?
+    var woeid           : Int?
+    var latt_long       : String?
 }

@@ -27,8 +27,7 @@ class VideoTVC: UITableViewCell {
         setupCell()
     }
     
-    func setupCell()
-    {
+    func setupCell() {
         if let videoUrl = item?.url {
             videoHere.load(withVideoId: videoUrl, playerVars: ["playsinline" : 1])
         }

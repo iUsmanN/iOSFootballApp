@@ -18,10 +18,10 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     var playerItems     = [PlayerItem]()
     
     private init() {
-        getNFData(1, 4, completion: setNewsFeedItems(_:))
-        getGalleryData(0, 6, completion: setGalleryItems(_:))
-        getData(0, 20, completion: setTeamItems(_:))
-        getData(0, 13, completion: setPlayerItems(_:))
+        getNFData       (1, 4, completion: setNewsFeedItems(_:))
+        getGalleryData  (0, 6, completion: setGalleryItems(_:))
+        getData         (0, 20, completion: setTeamItems(_:))
+        getData         (0, 13, completion: setPlayerItems(_:))
     }
     
     @discardableResult
@@ -42,8 +42,8 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     }
     
     func setNewsFeedItems(_ input: [NewsFeedItem]) {
-        newsFeedItems = input
-        let main = UIStoryboard(name: "Main", bundle: nil)
+        newsFeedItems   = input
+        let main        = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateInitialViewController() {
             (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = vc
         }

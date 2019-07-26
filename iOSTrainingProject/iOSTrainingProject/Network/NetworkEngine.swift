@@ -20,10 +20,10 @@ extension NetworkEngine {
                 var items:[T] = Array()
                 do {
                     for child in datasnap.children.allObjects {
-                        let snap = child as! DataSnapshot
-                        let data = snap.value as! [String:Any]
-                        let serializedData = try JSONSerialization.data(withJSONObject: data)
-                        let x = try JSONDecoder().decode(T.self, from: serializedData)
+                        let snap            = child as! DataSnapshot
+                        let data            = snap.value as! [String:Any]
+                        let serializedData  = try JSONSerialization.data(withJSONObject: data)
+                        let x               = try JSONDecoder().decode(T.self, from: serializedData)
                         items.append(x)
                         print("OK")
                     }
@@ -34,8 +34,6 @@ extension NetworkEngine {
                 }
         }
     }
-    
-    //func loadImage(
 }
 
 func filterItems<T>(_ input: [T?]) -> [T] {
@@ -52,9 +50,9 @@ func filterItems<T>(_ input: [T?]) -> [T] {
 extension NetworkEngine {
     func weatherQuery(completion: @escaping ([CityItem]?)->())
     {
-        var items: [CityItem]?
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        var items       : [CityItem]?
+        let config      = URLSessionConfiguration.default
+        let session     = URLSession(configuration: config)
         
         if let url = URL(string: "https://www.metaweather.com/api/location/search/?query=san") {
             _ = session.dataTask(with: url) {
@@ -68,8 +66,7 @@ extension NetworkEngine {
                 } catch {
                     print("Error fetching cities")
                 }
-                
-            }.resume()
+                }.resume()
         }
     }
 }

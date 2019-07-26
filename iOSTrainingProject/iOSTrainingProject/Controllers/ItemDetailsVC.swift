@@ -10,18 +10,18 @@ import UIKit
 
 class ItemDetailsVC: UIViewController, ImageManager {
 
-    @IBOutlet weak var imageHere: UIImageView!
-    @IBOutlet weak var titleHere: UILabel!
-    @IBOutlet weak var descriptionHere: UITextView!
+    @IBOutlet weak var imageHere        : UIImageView!
+    @IBOutlet weak var titleHere        : UILabel!
+    @IBOutlet weak var descriptionHere  : UITextView!
     
-    var item: NewsFeedItem?
+    var item                            : NewsFeedItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        titleHere.text = item?.title
-        descriptionHere.text = item?.description
+        titleHere.text          = item?.title
+        descriptionHere.text    = item?.description
         
         if item?.type == 2 {
             if let url = item?.url {

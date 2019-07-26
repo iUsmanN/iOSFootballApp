@@ -10,16 +10,25 @@ import UIKit
 
 class CitiesVC: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    var viewModel: CitiesVM?
+    @IBOutlet weak var tableView    : UITableView!
+    var viewModel                   : CitiesVM?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupViewModel()
+    }
+}
+
+extension CitiesVC {
+    func setupTableView() {
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+    }
+    
+    func setupViewModel() {
         viewModel = CitiesVM(closure: {
             DispatchQueue.main.async { self.tableView.reloadData() }
         })
-        
         viewModel?.getCityData()
     }
 }
@@ -30,12 +39,12 @@ extension CitiesVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as! CityTVC
-        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityTVC {
         cell.item = viewModel?.getItemAt(indexPath: indexPath)
-        
         return cell
+        } else {
+            print("Error dequeing Video cell")
+        }
+        return UITableViewCell()
     }
-    
-    
 }

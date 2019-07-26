@@ -9,38 +9,28 @@
 import UIKit
 
 class NewsFeedVC: UIViewController {
-
-    @IBOutlet weak var tableview: UITableView!
-    var vm = NewsFeedVM()
-    var segueItem: NewsFeedItem?
+    
+    @IBOutlet weak var tableview    : UITableView!
+    var segueItem                   : NewsFeedItem?
+    var vm                          = NewsFeedVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNewsFeed()
         vm.getData(pagination: updateTableView)
     }
-    
-    func setupNewsFeed()
-    {
-        tableview.dataSource = self
-        tableview.backgroundColor = UIColor.clear
-        let factNib = UINib(nibName: "FactTVC", bundle: nil)
-        tableview.register(factNib, forCellReuseIdentifier: "FACT")
-        let newsNib = UINib(nibName: "NewsLinkTVC", bundle: nil)
-        tableview.register(newsNib, forCellReuseIdentifier: "NEWS")
-        let videoNib = UINib(nibName: "VideoTVC", bundle: nil)
-        tableview.register(videoNib, forCellReuseIdentifier: "VIDEO")
-    }
 }
 
-//struct TPConstants {
-//    private init(){}
-//     struct Nibs {
-//        private init(){}
-//        static let FACT_TVC = UINib(nibName: "FactTVC", bundle: nil)
-//    }
-//}
+extension NewsFeedVC {
+    
+    func setupNewsFeed() {
+        tableview.dataSource = self
+        tableview.backgroundColor = UIColor.clear
+        tableview.register(TPConstants.Nibs.FACT_TVC, forCellReuseIdentifier: "FACT")
+        tableview.register(TPConstants.Nibs.NEWS_TVC, forCellReuseIdentifier: "NEWS")
+        tableview.register(TPConstants.Nibs.VIDEO_TVC, forCellReuseIdentifier: "VIDEO")
+    }
+}
 
 extension NewsFeedVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +39,6 @@ extension NewsFeedVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //pagination code here
         vm.getPaginatedData(indexPath: indexPath)
         
         let item : NewsFeedItem = vm.itemAt(indexPath)
@@ -58,31 +47,31 @@ extension NewsFeedVC : UITableViewDataSource {
         {
         case 1:
             print("Video")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as! VideoTVC
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as? VideoTVC {
             cell.item = vm.itemAt(indexPath)
             cell.backgroundColor = UIColor.clear
             cell.shareDelegate = self
             cell.descriptionDelegate = self
             return cell
-            
+            } else { print("Error dequeing Video cell") }
         case 2:
             print("Fact")
-            let cell = tableview.dequeueReusableCell(withIdentifier: "FACT", for: indexPath) as! FactTVC
+            if let cell = tableview.dequeueReusableCell(withIdentifier: "FACT", for: indexPath) as? FactTVC {
             cell.item = vm.itemAt(indexPath)
             cell.backgroundColor = UIColor.clear
             cell.shareDelegate = self
             cell.descriptionDelegate = self
             return cell
-            
+            } else { print("Error dequeing Fact cell") }
         case 3:
             print("News Item")
-            let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as! NewsLinkTVC
+            if let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as? NewsLinkTVC {
             cell.item = vm.itemAt(indexPath)
             cell.shareDelegate = self
             cell.descriptionDelegate = self
             cell.backgroundColor = UIColor.clear
             return cell
-            
+        } else { print("Error dequeing News cell") }
         default:
             print("Error in classifying NF Item")
         }
@@ -95,7 +84,7 @@ extension NewsFeedVC : ShareItemDelegate {
     func newsFeedItemShared(input: NewsFeedItem?) {
         if let item = input {
             let vc = UIActivityViewController(activityItems: [item.title as Any, item.url as Any], applicationActivities: [])
-        present(vc, animated: true, completion: nil)
+            present(vc, animated: true, completion: nil)
         }
     }
 }
@@ -135,7 +124,7 @@ extension NewsFeedVC {
     func updateTableView(inputCount: Int) {
         tableview.beginUpdates()
         for i in (1...inputCount).reversed() {
-        tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - i, section: 0)], with: .bottom)
+            tableview.insertRows(at: [IndexPath(row: vm.numberOfItems(in: 0) - i, section: 0)], with: .bottom)
         }
         tableview.endUpdates()
     }

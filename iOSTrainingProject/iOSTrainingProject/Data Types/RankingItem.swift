@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RankingItem  : Decodable {
+struct RankingItem  : Decodable, HasDetails {
     var ranking     : Int?
     var name        : String?
     var pointsto    : Int?
@@ -16,8 +16,4 @@ struct RankingItem  : Decodable {
     var position    : Int?
     var flag        : String?
     var desc        : String?
-}
-
-extension RankingItem : HasDetails {
-    
 }

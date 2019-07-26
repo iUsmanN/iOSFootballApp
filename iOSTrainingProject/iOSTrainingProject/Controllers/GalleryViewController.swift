@@ -9,22 +9,19 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
-
-    @IBOutlet weak var CollectionView: UICollectionView!
+    
+    @IBOutlet weak var CollectionView   : UICollectionView!
+    var vm                              : GalleryVM?
     let cellId = "GalleryCell"
-    
-    
-    var vm: GalleryVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         vm = GalleryVM(refreshColViewClosure: {
             self.CollectionView.reloadData()
         })
-        vm?.getData()
         
+        vm?.getData()
         setupCollectionView()
     }
     
@@ -37,8 +34,8 @@ extension GalleryViewController {
     func setupCollectionView() {
         CollectionView.delegate     = self
         CollectionView.dataSource   = self
-        let nib = UINib(nibName: "GalleryCollectionViewCell", bundle: nil)
-        CollectionView.register(nib, forCellWithReuseIdentifier: cellId)
+        //let nib = UINib(nibName: "GalleryCollectionViewCell", bundle: nil)
+        CollectionView.register(TPConstants.Nibs.GALLERY_CVC, forCellWithReuseIdentifier: cellId)
     }
     
     func setupCellSize() {
@@ -61,7 +58,7 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vm?.numberOfItemsInSection(section) ?? 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
         cell.item = vm?.galleryItem(at: indexPath)
@@ -72,7 +69,7 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
 
 
 extension GalleryViewController : DoubleTapDelegate {
-    func itemDoubleTapped(vc: UIActivityViewController) {
-        present(vc, animated: true, completion: nil)
+    func itemDoubleTapped(vc : UIActivityViewController) {
+        present(vc, animated : true, completion: nil)
     }
 }

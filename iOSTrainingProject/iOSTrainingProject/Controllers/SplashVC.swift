@@ -12,9 +12,6 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         DataManager.shared.getNewsFeedItems()
-//        _ = DataManager.shared
     }
 }

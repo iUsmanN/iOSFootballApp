@@ -10,13 +10,23 @@ import UIKit
 
 class PlayersVC: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    let vm = PlayersVM()
+    @IBOutlet weak var tableView    : UITableView!
+    let vm                          = PlayersVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupViewModel()
+    }
+}
 
+extension PlayersVC {
+    
+    func setupTableView() {
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+    }
+    
+    func setupViewModel () {
         vm.getData {
             self.tableView.reloadData()
         }
@@ -30,13 +40,13 @@ extension PlayersVC : UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayersTableViewCell", for: indexPath) as! PlayersTVC
-        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PlayersTableViewCell", for: indexPath) as? PlayersTVC {
         cell.item = vm.getItem(at: indexPath)
-        
-        //add pagination code here
-        
         return cell
+        } else {
+            print("Error dequeing Players cell")
+        }
+        return UITableViewCell()
     }
 }
 

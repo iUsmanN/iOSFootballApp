@@ -23,10 +23,7 @@ class GalleryCollectionViewCell: UICollectionViewCell, ImageManager {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        layer.cornerRadius = 10
-        layer.shadowOffset = CGSize(width: 10, height: 10)
+        setupCALayer()
         setupDoubleTap()
     }
     
@@ -55,5 +52,10 @@ extension GalleryCollectionViewCell {
         print("Share Image")
         let vc = UIActivityViewController(activityItems: [imagehere.image as Any], applicationActivities: [])
         delegate?.itemDoubleTapped(vc: vc)
+    }
+    
+    func setupCALayer() {
+        layer.cornerRadius = 10
+        layer.shadowOffset = CGSize(width: 10, height: 10)
     }
 }
