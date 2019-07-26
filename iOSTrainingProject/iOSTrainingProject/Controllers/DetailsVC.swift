@@ -20,12 +20,14 @@ class DetailsVC: UIViewController, Color{
     @IBOutlet weak var position         : UILabel!
     @IBOutlet weak var positionImage    : UIImageView!
     @IBOutlet weak var descriptionLabel : UITextView!
+    @IBOutlet weak var blurView         : UIVisualEffectView!
     
     var item                            : HasDetails?
     var cellImage                       : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCALayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +67,13 @@ class DetailsVC: UIViewController, Color{
         } else {
             position.text = String(positionInput)
             positionImage.image      = UIImage(named: "neutral")?.withRenderingMode(.alwaysTemplate)
-            positionImage.tintColor  = getColor(0,0,0,1)
+            positionImage.tintColor  = getColor(1,1,1,1)
         }
+    }
+}
+
+extension DetailsVC {
+    func setupCALayer() {
+        //Setup in IB
     }
 }

@@ -23,12 +23,15 @@ class NewsFeedVC: UIViewController {
 
 extension NewsFeedVC {
     
+    
     func setupNewsFeed() {
         tableview.dataSource = self
         tableview.backgroundColor = UIColor.clear
         tableview.register(TPConstants.Nibs.FACT_TVC, forCellReuseIdentifier: "FACT")
         tableview.register(TPConstants.Nibs.NEWS_TVC, forCellReuseIdentifier: "NEWS")
         tableview.register(TPConstants.Nibs.VIDEO_TVC, forCellReuseIdentifier: "VIDEO")
+        
+//        tableview.contentInset = UIEdgeInsets(top: CGFloat(0), left: CGFloat(10), bottom: CGFloat(0), right: CGFloat(10))
     }
 }
 
@@ -48,30 +51,30 @@ extension NewsFeedVC : UITableViewDataSource {
         case 1:
             print("Video")
             if let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO", for: indexPath) as? VideoTVC {
-            cell.item = vm.itemAt(indexPath)
-            cell.backgroundColor = UIColor.clear
-            cell.shareDelegate = self
-            cell.descriptionDelegate = self
-            return cell
+                cell.item = vm.itemAt(indexPath)
+                cell.backgroundColor = UIColor.clear
+                cell.shareDelegate = self
+                cell.descriptionDelegate = self
+                return cell
             } else { print("Error dequeing Video cell") }
         case 2:
             print("Fact")
             if let cell = tableview.dequeueReusableCell(withIdentifier: "FACT", for: indexPath) as? FactTVC {
-            cell.item = vm.itemAt(indexPath)
-            cell.backgroundColor = UIColor.clear
-            cell.shareDelegate = self
-            cell.descriptionDelegate = self
-            return cell
+                cell.item = vm.itemAt(indexPath)
+                cell.backgroundColor = UIColor.clear
+                cell.shareDelegate = self
+                cell.descriptionDelegate = self
+                return cell
             } else { print("Error dequeing Fact cell") }
         case 3:
             print("News Item")
             if let cell = tableview.dequeueReusableCell(withIdentifier: "NEWS", for: indexPath) as? NewsLinkTVC {
-            cell.item = vm.itemAt(indexPath)
-            cell.shareDelegate = self
-            cell.descriptionDelegate = self
-            cell.backgroundColor = UIColor.clear
-            return cell
-        } else { print("Error dequeing News cell") }
+                cell.item = vm.itemAt(indexPath)
+                cell.shareDelegate = self
+                cell.descriptionDelegate = self
+                cell.backgroundColor = UIColor.clear
+                return cell
+            } else { print("Error dequeing News cell") }
         default:
             print("Error in classifying NF Item")
         }

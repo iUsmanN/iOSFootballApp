@@ -13,6 +13,7 @@ class VideoTVC: UITableViewCell {
     
     @IBOutlet weak var videoHere    : YTPlayerView!
     @IBOutlet weak var title        : UILabel!
+    @IBOutlet weak var blur         : UIVisualEffectView!
     
     var item                        : NewsFeedItem?
     var shareDelegate               : ShareItemDelegate?
@@ -25,6 +26,7 @@ class VideoTVC: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         setupCell()
+        setupCALayer()
     }
     
     func setupCell() {
@@ -39,5 +41,14 @@ class VideoTVC: UITableViewCell {
     }
     @IBAction func descriptionButtonPressed(_ sender: Any) {
         descriptionDelegate?.showDescription(input: item)
+    }
+}
+
+extension VideoTVC {
+    func setupCALayer() {
+        blur.layer.cornerRadius = 20
+        //blur.safeAreaInsets = UIEdgeInsets(top: CGFloat(0), left: CGFloat(10), bottom: CGFloat(0), right: CGFloat(10))
+        //layer.borderWidth = CGFloat(30)
+        //layer.borderColor = UIColor.black.cgColor
     }
 }

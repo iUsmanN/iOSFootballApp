@@ -43,13 +43,13 @@ class PlayersTVC: UITableViewCell, Color, ImageManager {
         if let pos = item?.position {
             if(pos>0) {
                 position.image      = UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
-                position.tintColor  = getColor(0,0.7,0,1)
+                position.tintColor  = getColor(0,1,0,1)
             } else if (pos<0) {
                 position.image      = UIImage(named: "down")?.withRenderingMode(.alwaysTemplate)
-                position.tintColor  = getColor(0.7,0,0,1)
+                position.tintColor  = getColor(1,0,0,1)
             } else {
                 position.image      = UIImage(named: "neutral")?.withRenderingMode(.alwaysTemplate)
-                position.tintColor  = getColor(0,0,0,1)
+                position.tintColor  = getColor(1,1,1,1)
             }
         }
     }
