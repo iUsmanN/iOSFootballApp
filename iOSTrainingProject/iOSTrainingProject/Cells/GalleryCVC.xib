@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="75" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultGalleryImage" translatesAutoresizingMaskIntoConstraints="NO" id="v6V-Nb-cT4">
+                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="v6V-Nb-cT4">
                         <rect key="frame" x="0.0" y="0.0" width="75" height="121"/>
                     </imageView>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sou-DW-GWe">
@@ -54,6 +54,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="75" height="121"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                    <integer key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="captionhere" destination="Wrq-cs-j7Z" id="SLg-f2-XuA"/>
                 <outlet property="imagehere" destination="v6V-Nb-cT4" id="UcY-cC-BsP"/>
@@ -62,6 +67,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="defaultGalleryImage" width="64" height="64"/>
+        <image name="background" width="250" height="250"/>
     </resources>
 </document>

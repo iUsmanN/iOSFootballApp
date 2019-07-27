@@ -8,4 +8,5 @@
 
 import Foundation
 
+/// Protocol used to define an item that can be seen in the details view screen
 protocol HasDetails { }

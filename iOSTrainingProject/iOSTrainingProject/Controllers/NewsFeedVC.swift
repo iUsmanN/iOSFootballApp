@@ -24,14 +24,13 @@ class NewsFeedVC: UIViewController {
 extension NewsFeedVC {
     
     
+    /// Sets up the tableview for the newsfeed and registers the cells
     func setupNewsFeed() {
         tableview.dataSource = self
         tableview.backgroundColor = UIColor.clear
         tableview.register(TPConstants.Nibs.FACT_TVC, forCellReuseIdentifier: "FACT")
         tableview.register(TPConstants.Nibs.NEWS_TVC, forCellReuseIdentifier: "NEWS")
         tableview.register(TPConstants.Nibs.VIDEO_TVC, forCellReuseIdentifier: "VIDEO")
-        
-//        tableview.contentInset = UIEdgeInsets(top: CGFloat(0), left: CGFloat(10), bottom: CGFloat(0), right: CGFloat(10))
     }
 }
 
@@ -124,6 +123,9 @@ extension NewsFeedVC : ShowDescriptionDelegate {
 
 extension NewsFeedVC {
     
+    /// Inserts new NewsFeed items to the table view
+    ///
+    /// - Parameter inputCount: Number of items to be inserted
     func updateTableView(inputCount: Int) {
         tableview.beginUpdates()
         for i in (1...inputCount).reversed() {

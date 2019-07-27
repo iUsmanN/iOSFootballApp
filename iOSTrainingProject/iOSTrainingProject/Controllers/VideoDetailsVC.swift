@@ -21,7 +21,11 @@ class VideoDetailsVC: UIViewController {
         super.viewDidLoad()
         setupView()
     }
+}
+
+extension VideoDetailsVC {
     
+    /// Loads the values in the view
     func setupView() {
         titleHere.text          = item?.title
         descriptionHere.text    = item?.description

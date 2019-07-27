@@ -22,11 +22,13 @@ class TeamsVC: UIViewController {
 
 extension TeamsVC {
     
+    /// Sets up view model
     func setupViewModel(){
         vm = TeamsVM({ self.tableView.reloadData() })
         vm?.getData()
     }
     
+    /// Sets up the table view
     func setupTableView() {
         tableView.dataSource    = self
         tableView.delegate      = self
@@ -62,6 +64,10 @@ extension TeamsVC {
         }
     }
     
+    /// Gets the image of the cell displayed in the table view
+    ///
+    /// - Parameter indexPath: Indexpath of the cell
+    /// - Returns: Image of the given cell
     func getImageOfCell(at indexPath: IndexPath) -> UIImage? {
         let cell = tableView.cellForRow(at: indexPath) as? RankingTableViewCell
         return cell?.flag.image

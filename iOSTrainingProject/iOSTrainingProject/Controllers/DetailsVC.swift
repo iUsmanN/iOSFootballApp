@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailsVC: UIViewController, Color{
-
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var name             : UILabel!
@@ -27,11 +27,17 @@ class DetailsVC: UIViewController, Color{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCALayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        setupView()
+    }
+}
+
+extension DetailsVC {
+    
+    /// Setups the details view
+    func setupView() {
         image.image                 = cellImage
         backgroundImage.image       = cellImage
         
@@ -55,6 +61,9 @@ class DetailsVC: UIViewController, Color{
         }
     }
     
+    /// Adds image to the ± position imageview
+    ///
+    /// - Parameter positionInput: ± value of position
     func showPosition(positionInput: Int) {
         if positionInput > 0 {
             position.text = "+" + String(positionInput)
@@ -69,11 +78,5 @@ class DetailsVC: UIViewController, Color{
             positionImage.image      = UIImage(named: "neutral")?.withRenderingMode(.alwaysTemplate)
             positionImage.tintColor  = getColor(1,1,1,1)
         }
-    }
-}
-
-extension DetailsVC {
-    func setupCALayer() {
-        //Setup in IB
     }
 }

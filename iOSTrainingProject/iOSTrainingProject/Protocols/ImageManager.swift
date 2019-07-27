@@ -14,6 +14,12 @@ protocol ImageManager {
 }
 
 extension ImageManager {
+    
+    /// Downloads an image using native URL method in the background thread
+    ///
+    /// - Parameters:
+    ///   - string: URL of iage
+    ///   - completion: Closure called having the loaded image as parameter
     func downloadImage(_ string: String, completion: @escaping (UIImage?)->()) {
         
         DispatchQueue.global(qos: .background).async {

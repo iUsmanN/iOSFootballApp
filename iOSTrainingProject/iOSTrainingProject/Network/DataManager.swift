@@ -17,6 +17,7 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     var teamItems       = [RankingItem]()
     var playerItems     = [PlayerItem]()
     
+    /// Getting initial data for all tabs
     private init() {
         getNFData       (1, 4, completion: setNewsFeedItems(_:))
         getGalleryData  (0, 6, completion: setGalleryItems(_:))
@@ -25,22 +26,37 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     }
     
     @discardableResult
+    /// Returns the initial News Feed items
+    ///
+    /// - Returns: Array of Initial NewsFeed Items
     func getNewsFeedItems() -> [NewsFeedItem] {
         return newsFeedItems
     }
     
+    /// Returns the initial Gallery items
+    ///
+    /// - Returns: Array of initial Gallery items
     func getGalleryItems() -> [GalleryItem] {
         return galleryItems
     }
     
+    /// Returns the initial Teams items
+    ///
+    /// - Returns: Array of initial Team items
     func getTeamItems() -> [RankingItem] {
         return teamItems
     }
     
+    /// Returns the initial Player items
+    ///
+    /// - Returns: Array of initial Player items
     func getPlayerItems() -> [PlayerItem] {
         return playerItems
     }
     
+    /// Function used to set the initial NewsFeed items
+    ///
+    /// - Parameter input: Array of initial NewsFeed items
     func setNewsFeedItems(_ input: [NewsFeedItem]) {
         newsFeedItems   = input
         let main        = UIStoryboard(name: "Main", bundle: nil)
@@ -49,14 +65,23 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
         }
     }
     
+    /// Function used to set the initial NewsFeed items
+    ///
+    /// - Parameter input: Array of initial Gallery items
     func setGalleryItems(_ input: [GalleryItem]) {
         galleryItems = input
     }
     
+    /// Function used to set the initial Team items
+    ///
+    /// - Parameter input: Array of initial Team items
     func setTeamItems(_ input: [RankingItem]) {
         teamItems = input
     }
     
+    /// Function used to set the initial Team items
+    ///
+    /// - Parameter input: Array of initial Player items
     func setPlayerItems(_ input: [PlayerItem]) {
         playerItems = input
     }

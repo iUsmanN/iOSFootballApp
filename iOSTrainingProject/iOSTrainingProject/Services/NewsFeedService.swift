@@ -14,6 +14,12 @@ protocol NewsFeedService : NetworkEngine {
 
 extension NewsFeedService {
     
+    /// Gets NewsFeed data from the database
+    ///
+    /// - Parameters:
+    ///   - startingIndex: Starting index of query
+    ///   - amount: Number of items to be fetched
+    ///   - completion: Closure with query data as parameters
     func getNFData(_ startingIndex: Int, _ amount:Int, completion:  @escaping ([NewsFeedItem]) -> ()) {
         addObserver(for: "NewsFeed", startingIndex, amount, completionhandler: completion)
     }

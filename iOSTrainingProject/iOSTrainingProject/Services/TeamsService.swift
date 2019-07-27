@@ -13,6 +13,12 @@ protocol TeamsService : NetworkEngine {
 }
 
 extension TeamsService {
+    /// Gets Teams data from the database
+    ///
+    /// - Parameters:
+    ///   - startingIndex: Starting index of query
+    ///   - amount: Number of items to be fetched
+    ///   - completion: Closure with query data as parameters
     func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([RankingItem])->()) {
         addObserver(for: "Teams", startingIndex, amount, completionhandler: completion)
     }

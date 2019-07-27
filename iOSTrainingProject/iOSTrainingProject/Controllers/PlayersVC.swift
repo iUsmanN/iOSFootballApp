@@ -22,10 +22,12 @@ class PlayersVC: UIViewController {
 
 extension PlayersVC {
     
+    /// Sets up the tableview and adds its data source
     func setupTableView() {
         tableView.dataSource = self
     }
     
+    /// Sets up the view model and gets data
     func setupViewModel () {
         vm.getData {
             self.tableView.reloadData()
@@ -60,6 +62,10 @@ extension PlayersVC {
         }
     }
     
+    /// Gets the image of the cell displayed in the table view
+    ///
+    /// - Parameter indexPath: Indexpath of the cell
+    /// - Returns: Image of the given cell
     func getImageOfCell(at indexPath: IndexPath) -> UIImage? {
         let cell = tableView.cellForRow(at: indexPath) as? PlayersTVC
         return cell?.flag.image

@@ -49,7 +49,7 @@ class PlayersTVC: UITableViewCell, Color, ImageManager {
                 position.tintColor  = getColor(1,0,0,1)
             } else {
                 position.image      = UIImage(named: "neutral")?.withRenderingMode(.alwaysTemplate)
-                position.tintColor  = getColor(1,1,1,1)
+                position.tintColor  = getColor(0,0,0,1)
             }
         }
     }

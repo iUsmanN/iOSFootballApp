@@ -13,6 +13,13 @@ protocol NetworkEngine {
 }
 
 extension NetworkEngine {
+    /// A generic function that returns an array of the requested datatype from the firebase database.
+    ///
+    /// - Parameters:
+    ///   - ItemType: Defines the type of elements to be returned from the database
+    ///   - startingIndex: Defines the starting index of the database query
+    ///   - amount: Defines the number of Items to fetch from the databse
+    ///   - completionhandler: A closure with parameter containing the returned values from the database.
     func addObserver<T>(for ItemType: String, _ startingIndex: Int, _ amount:Int, completionhandler: @escaping ([T]) -> ()) where T : Decodable {
         let ref = Database.database().reference()
         ref.child(ItemType).queryOrderedByKey().queryStarting(atValue:String(startingIndex)).queryEnding(atValue:String(startingIndex + amount - 1))
@@ -36,6 +43,10 @@ extension NetworkEngine {
     }
 }
 
+/// Filters out the null elements returned from the firebase query. This is important because Firebase returns NULL for all elements before the starting index of the query.
+///
+/// - Parameter input: Array containing NULL values
+/// - Returns: Array without any NULL values
 func filterItems<T>(_ input: [T?]) -> [T] {
     var res: [T] = Array()
     for x in input {
@@ -48,6 +59,9 @@ func filterItems<T>(_ input: [T?]) -> [T] {
 
 
 extension NetworkEngine {
+    /// URL Session based query ("https://www.metaweather.com/api/location/search/?query=san") function to fetch data from www.metaweather.com
+    ///
+    /// - Parameter completion: A closure with parameter containing the returned values from the database
     func weatherQuery(completion: @escaping ([CityItem]?)->())
     {
         var items       : [CityItem]?

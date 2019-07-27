@@ -21,10 +21,13 @@ class CitiesVC: UIViewController {
 }
 
 extension CitiesVC {
+    
+    /// Sets up the datasource for the table view
     func setupTableView() {
         tableView.dataSource = self
     }
     
+    /// Sets up the view model and gets the city data
     func setupViewModel() {
         viewModel = CitiesVM(closure: {
             DispatchQueue.main.async { self.tableView.reloadData() }

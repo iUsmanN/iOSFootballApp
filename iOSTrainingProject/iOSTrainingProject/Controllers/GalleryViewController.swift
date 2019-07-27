@@ -31,6 +31,7 @@ class GalleryViewController: UIViewController {
 }
 
 extension GalleryViewController {
+    /// Sets up the collection view and registers the Nibs
     func setupCollectionView() {
         CollectionView.delegate     = self
         CollectionView.dataSource   = self
@@ -38,12 +39,13 @@ extension GalleryViewController {
         CollectionView.register(TPConstants.Nibs.GALLERY_CVC, forCellWithReuseIdentifier: cellId)
     }
     
+    /// Sets up the Collection view flow layout.
     func setupCellSize() {
         let CollectionViewFlowLayout = UICollectionViewFlowLayout()
         let NumberOfRows             = CGFloat(2)
         let LineSpacing              = CGFloat(5)
         let InterItemSpacing         = CGFloat(5)
-        let width                    = (view.frame.width - ((NumberOfRows-1)*LineSpacing))/NumberOfRows
+        let width                    = (CollectionView.frame.width - ((NumberOfRows-1)*LineSpacing))/NumberOfRows
         let height                   = width * 1.5
         CollectionViewFlowLayout.itemSize           = CGSize(width: width, height: height)
         CollectionViewFlowLayout.sectionInset       = .zero

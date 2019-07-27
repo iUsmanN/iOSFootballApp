@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Constants
 struct TPConstants {
     private init() { }
     

@@ -13,6 +13,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //delegate = self
+        
+        //self.modalTransitionStyle = .crossDissolve
     }
 }
 

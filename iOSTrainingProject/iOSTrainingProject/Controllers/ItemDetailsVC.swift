@@ -18,18 +18,27 @@ class ItemDetailsVC: UIViewController, ImageManager {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension ItemDetailsVC {
+    
+    /// Sets up the view
+    func setupView() {
         titleHere.text          = item?.title
         descriptionHere.text    = item?.description
         
         if item?.type == 2 {
             if let url = item?.url {
-            ImageCache.shared.loadImage(url, completion: setImage(input:))
+                ImageCache.shared.loadImage(url, completion: setImage(input:))
             }
         }
     }
     
+    /// Loads the image for the veiw
+    ///
+    /// - Parameter input: Image to load
     func setImage(input: UIImage?) {
         DispatchQueue.main.async { self.imageHere.image = input }
     }

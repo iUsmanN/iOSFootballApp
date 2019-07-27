@@ -14,19 +14,17 @@ class TP_AboutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         addLabel()
     }
 }
 
 extension TP_AboutVC {
+    
+    
+    /// Adds the text to the attributed text label in the view
     func addLabel() {
         let myAttribute2    = [ NSAttributedString.Key.backgroundColor: UIColor.yellow ]
         let mystring        = NSAttributedString(string: "This is an attributed string.", attributes: myAttribute2)
-        
         label.attributedText = mystring
-        
-        
     }
 }
