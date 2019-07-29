@@ -10,11 +10,13 @@ import UIKit
 
 class FactTVC: UITableViewCell, ImageManager {
     
+    //View variables
     @IBOutlet weak var readMore         : UIButton!
     @IBOutlet weak var share            : UIButton!
     @IBOutlet weak var title            : UILabel!
     @IBOutlet weak var factImage        : UIImageView!
     
+    //Object variables
     var item                            : NewsFeedItem?
     var shareDelegate                   : ShareItemDelegate?
     var descriptionDelegate             : ShowDescriptionDelegate?

@@ -10,7 +10,10 @@ import UIKit
 
 class PlayersVC: UIViewController {
 
+    //View variables
     @IBOutlet weak var tableView    : UITableView!
+    
+    //Object variables
     let vm                          = PlayersVM()
     
     override func viewDidLoad() {

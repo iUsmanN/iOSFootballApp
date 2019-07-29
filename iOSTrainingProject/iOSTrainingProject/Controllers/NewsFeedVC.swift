@@ -10,7 +10,10 @@ import UIKit
 
 class NewsFeedVC: UIViewController {
     
+    //View variables
     @IBOutlet weak var tableview    : UITableView!
+    
+    //Object variables
     var segueItem                   : NewsFeedItem?
     var vm                          = NewsFeedVM()
     
@@ -22,9 +25,6 @@ class NewsFeedVC: UIViewController {
 }
 
 extension NewsFeedVC {
-    
-    
-    /// Sets up the tableview for the newsfeed and registers the cells
     func setupNewsFeed() {
         tableview.dataSource = self
         tableview.backgroundColor = UIColor.clear

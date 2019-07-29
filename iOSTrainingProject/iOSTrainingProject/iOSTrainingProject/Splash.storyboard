@@ -17,10 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="ZeP-h2-HyA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.87609849070000001" blue="0.20837150309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-LE-6nn" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wsR-LE-6nn" secondAttribute="height" multiplier="1:1" id="hUK-6a-JLf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wsR-LE-6nn" firstAttribute="centerX" secondItem="ZeP-h2-HyA" secondAttribute="centerX" id="Mk6-De-ET5"/>
+                            <constraint firstItem="wsR-LE-6nn" firstAttribute="centerY" secondItem="ZeP-h2-HyA" secondAttribute="centerY" id="aID-bD-uMg"/>
+                            <constraint firstItem="wsR-LE-6nn" firstAttribute="width" secondItem="ZeP-h2-HyA" secondAttribute="width" id="bij-l5-G7T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nsb-C3-dzI"/>
                     </view>
                     <connections>
+                        <outlet property="animView" destination="wsR-LE-6nn" id="uG7-cQ-Bxe"/>
                         <segue destination="lgT-iI-kkc" kind="show" identifier="segueToMain" id="FEC-3R-fEx"/>
                     </connections>
                 </viewController>

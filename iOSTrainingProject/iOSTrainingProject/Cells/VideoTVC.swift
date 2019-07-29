@@ -11,10 +11,12 @@ import youtube_ios_player_helper
 
 class VideoTVC: UITableViewCell {
     
+    //View variables
     @IBOutlet weak var videoHere    : YTPlayerView!
     @IBOutlet weak var title        : UILabel!
     @IBOutlet weak var blur         : UIVisualEffectView!
     
+    //Object variables
     var item                        : NewsFeedItem?
     var shareDelegate               : ShareItemDelegate?
     var descriptionDelegate         : ShowDescriptionDelegate?
@@ -32,6 +34,7 @@ class VideoTVC: UITableViewCell {
     func setupCell() {
         if let videoUrl = item?.url {
             videoHere.load(withVideoId: videoUrl, playerVars: ["playsinline" : 1])
+            videoHere.playVideo()
         }
         title.text = item?.title
     }
@@ -47,8 +50,6 @@ class VideoTVC: UITableViewCell {
 extension VideoTVC {
     func setupCALayer() {
         blur.layer.cornerRadius = 20
-        //blur.safeAreaInsets = UIEdgeInsets(top: CGFloat(0), left: CGFloat(10), bottom: CGFloat(0), right: CGFloat(10))
-        //layer.borderWidth = CGFloat(30)
-        //layer.borderColor = UIColor.black.cgColor
+        videoHere.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }

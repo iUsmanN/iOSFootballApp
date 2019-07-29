@@ -39,17 +39,11 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="3y8-WR-rxA">
                                     <rect key="frame" x="8" y="190" width="303" height="30"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-rY-LM2">
-                                            <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
-                                            <state key="normal" title="Read More">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="descriptionButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sTu-92-U37"/>
-                                            </connections>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-mk-Hg2">
-                                            <rect key="frame" x="179" y="0.0" width="124" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="303" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="adw-Pk-UK5"/>
+                                            </constraints>
                                             <state key="normal" title="Share">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -58,10 +52,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Cxs-mk-Hg2" firstAttribute="width" secondItem="xmg-rY-LM2" secondAttribute="width" id="Drh-DE-cU7"/>
-                                        <constraint firstItem="Cxs-mk-Hg2" firstAttribute="height" secondItem="xmg-rY-LM2" secondAttribute="height" id="YgZ-BU-FXG"/>
-                                    </constraints>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-nm-KdO">
                                     <rect key="frame" x="8" y="148" width="303" height="40"/>
@@ -73,6 +63,15 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-rY-LM2">
+                                    <rect key="frame" x="8" y="8" width="303" height="180"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="descriptionButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sTu-92-U37"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Erl-nm-KdO" firstAttribute="trailing" secondItem="cEC-nd-CCU" secondAttribute="trailing" id="59F-A3-Fgh"/>
@@ -80,11 +79,14 @@
                                 <constraint firstItem="Erl-nm-KdO" firstAttribute="bottom" secondItem="cEC-nd-CCU" secondAttribute="bottom" id="BHL-5F-IRN"/>
                                 <constraint firstItem="3y8-WR-rxA" firstAttribute="leading" secondItem="Dln-Zc-36X" secondAttribute="leading" constant="8" id="KVR-BZ-9Xs"/>
                                 <constraint firstItem="cEC-nd-CCU" firstAttribute="leading" secondItem="Dln-Zc-36X" secondAttribute="leading" constant="8" id="Lx2-TY-oNr"/>
+                                <constraint firstItem="Erl-nm-KdO" firstAttribute="trailing" secondItem="xmg-rY-LM2" secondAttribute="trailing" id="MNG-mc-4ry"/>
                                 <constraint firstAttribute="trailing" secondItem="cEC-nd-CCU" secondAttribute="trailing" constant="8" id="TVB-UC-aW6"/>
-                                <constraint firstItem="xmg-rY-LM2" firstAttribute="height" secondItem="Dln-Zc-36X" secondAttribute="height" multiplier="0.17" id="TZg-OC-98Q"/>
+                                <constraint firstItem="Erl-nm-KdO" firstAttribute="leading" secondItem="xmg-rY-LM2" secondAttribute="leading" id="UkP-oj-XVC"/>
                                 <constraint firstItem="3y8-WR-rxA" firstAttribute="top" secondItem="cEC-nd-CCU" secondAttribute="bottom" constant="2" id="Va9-HP-6A0"/>
                                 <constraint firstAttribute="bottom" secondItem="3y8-WR-rxA" secondAttribute="bottom" constant="8" id="WDQ-Vo-g05"/>
                                 <constraint firstItem="Erl-nm-KdO" firstAttribute="leading" secondItem="cEC-nd-CCU" secondAttribute="leading" id="XQp-Qk-T2e"/>
+                                <constraint firstItem="cEC-nd-CCU" firstAttribute="top" secondItem="xmg-rY-LM2" secondAttribute="top" id="fmD-Z4-y6W"/>
+                                <constraint firstItem="Erl-nm-KdO" firstAttribute="bottom" secondItem="xmg-rY-LM2" secondAttribute="bottom" id="gdG-hz-89E"/>
                                 <constraint firstAttribute="trailing" secondItem="3y8-WR-rxA" secondAttribute="trailing" constant="8" id="n0Z-0a-x0X"/>
                                 <constraint firstItem="cEC-nd-CCU" firstAttribute="top" secondItem="Dln-Zc-36X" secondAttribute="top" constant="8" id="q6G-Mo-i46"/>
                             </constraints>
@@ -92,7 +94,7 @@
                         <blurEffect style="extraLight"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                <integer key="value" value="2"/>
+                                <integer key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="12"/>

@@ -61,6 +61,7 @@
 		4A82D92722E9881F00056949 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D92622E9881F00056949 /* ImageCache.swift */; };
 		4A82D92922EAC8ED00056949 /* TPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D92822EAC8ED00056949 /* TPConstants.swift */; };
 		4A82D92B22EB0C3800056949 /* TP_AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D92A22EB0C3800056949 /* TP_AboutVC.swift */; };
+		4A82D99522ED988B00056949 /* 1803-continuous-wave-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D99422ED988B00056949 /* 1803-continuous-wave-loader.json */; };
 		74ED13A9B3F75685FB02A849 /* Pods_iOSTrainingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		4A82D92622E9881F00056949 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		4A82D92822EAC8ED00056949 /* TPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPConstants.swift; sourceTree = "<group>"; };
 		4A82D92A22EB0C3800056949 /* TP_AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_AboutVC.swift; sourceTree = "<group>"; };
+		4A82D99422ED988B00056949 /* 1803-continuous-wave-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1803-continuous-wave-loader.json"; sourceTree = "<group>"; };
 		74F0C55E5B1E78ED03DA4F60 /* Pods-iOSTrainingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.debug.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		77668BD3EE2F866D06FA351F /* Pods-iOSTrainingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTrainingProject.release.xcconfig"; path = "Target Support Files/Pods-iOSTrainingProject/Pods-iOSTrainingProject.release.xcconfig"; sourceTree = "<group>"; };
 		CBD53F08394E741030B90489 /* Pods_iOSTrainingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTrainingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 		4A45253E22DC59EE00A6F381 /* iOSTrainingProject */ = {
 			isa = PBXGroup;
 			children = (
+				4A82D99422ED988B00056949 /* 1803-continuous-wave-loader.json */,
 				4A45253F22DC59EE00A6F381 /* AppDelegate.swift */,
 				4A45254122DC59EE00A6F381 /* ViewController.swift */,
 				4A45254322DC59EE00A6F381 /* Main.storyboard */,
@@ -423,6 +426,7 @@
 				4A45254A22DC59EF00A6F381 /* LaunchScreen.storyboard in Resources */,
 				4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */,
 				4A82D8C222DC8F0800056949 /* GoogleService-Info.plist in Resources */,
+				4A82D99522ED988B00056949 /* 1803-continuous-wave-loader.json in Resources */,
 				4A45254722DC59EF00A6F381 /* Assets.xcassets in Resources */,
 				4A82D91622E70EFE00056949 /* VideoTVC.xib in Resources */,
 				4A82D8E522DEF45300056949 /* GalleryCVC.xib in Resources */,

@@ -10,7 +10,10 @@ import UIKit
 
 class CitiesVC: UIViewController {
 
+    //View variables
     @IBOutlet weak var tableView    : UITableView!
+    
+    //Object variables
     var viewModel                   : CitiesVM?
     
     override func viewDidLoad() {

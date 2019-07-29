@@ -11,9 +11,11 @@ import SwiftLinkPreview
 
 class NewsLinkTVC: UITableViewCell, ImageManager {
     
+    //View variables
     @IBOutlet weak var imageHere        : UIImageView!
     @IBOutlet weak var titleHere        : UILabel!
     
+    //Object variables
     var item                            : NewsFeedItem?
     var shareDelegate                   : ShareItemDelegate?
     var descriptionDelegate             : ShowDescriptionDelegate?

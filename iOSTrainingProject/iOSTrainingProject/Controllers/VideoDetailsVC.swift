@@ -11,10 +11,12 @@ import youtube_ios_player_helper
 
 class VideoDetailsVC: UIViewController {
     
+    //View variables
     @IBOutlet weak var videoHere        : YTPlayerView!
     @IBOutlet weak var titleHere        : UILabel!
     @IBOutlet weak var descriptionHere  : UITextView!
     
+    //Object variables
     var item                            : NewsFeedItem?
     
     override func viewDidLoad() {

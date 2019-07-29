@@ -15,9 +15,14 @@ struct TPConstants {
     
     struct Nibs {
         private init() { }
-        static let FACT_TVC     = UINib(nibName: "FactTVC", bundle: nil)
-        static let NEWS_TVC     = UINib(nibName: "NewsLinkTVC", bundle: nil)
-        static let VIDEO_TVC    = UINib(nibName: "VideoTVC", bundle: nil)
-        static let GALLERY_CVC  = UINib(nibName: "GalleryCVC", bundle: nil)
+        static let FACT_TVC     = UINib(nibName: "FactTVC"      , bundle: nil)
+        static let NEWS_TVC     = UINib(nibName: "NewsLinkTVC"  , bundle: nil)
+        static let VIDEO_TVC    = UINib(nibName: "VideoTVC"     , bundle: nil)
+        static let GALLERY_CVC  = UINib(nibName: "GalleryCVC"   , bundle: nil)
+    }
+    
+    struct Pagination {
+        private init() { }
+        static let Amount       = 5
     }
 }

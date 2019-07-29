@@ -10,7 +10,7 @@ import Foundation
 import FirebaseDatabase
 
 class NewsFeedVM : NewsFeedService {
-    let total           : Int = 10
+    let total           : Int = 13
     let networkLayer    : NetworkLayer = NetworkLayer()
     var items = [NewsFeedItem]() { didSet { print(items.count) }}
     var paginationClosure: ((Int)->())?
@@ -31,7 +31,7 @@ class NewsFeedVM : NewsFeedService {
     func SetData(_ input: [NewsFeedItem]) {
         items.append(contentsOf: input)
         print("Items Set")
-        if let closure = paginationClosure {
+        if let closure = paginationClosure, input.count > 0 {
             closure(input.count)
         }
     }
@@ -59,7 +59,8 @@ class NewsFeedVM : NewsFeedService {
     func getPaginatedData(indexPath: IndexPath) {
         if items.count < total, indexPath.row - items.count == -1 {
             print("-> Get Data")
-            getNFData(items.count + 1, min(2, total-items.count), completion: SetData(_:))
+            print(String(TPConstants.Pagination.Amount) + ", " + String(total-items.count))
+            getNFData(items.count + 1, min(TPConstants.Pagination.Amount, total-items.count), completion: SetData(_:))
         }
     }
 }

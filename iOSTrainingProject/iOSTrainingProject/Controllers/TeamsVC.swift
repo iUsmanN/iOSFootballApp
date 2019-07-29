@@ -10,7 +10,10 @@ import UIKit
 
 class TeamsVC: UIViewController {
     
+    //View variables
     @IBOutlet weak var tableView    : UITableView!
+    
+    //Object variables
     var vm                          : TeamsVM?
     
     override func viewDidLoad() {

@@ -10,8 +10,8 @@ import UIKit
 
 class DetailsVC: UIViewController, Color{
     
+    //View variables
     @IBOutlet weak var backgroundImage: UIImageView!
-    
     @IBOutlet weak var name             : UILabel!
     @IBOutlet weak var rank             : UILabel!
     @IBOutlet weak var points           : UILabel!
@@ -22,11 +22,13 @@ class DetailsVC: UIViewController, Color{
     @IBOutlet weak var descriptionLabel : UITextView!
     @IBOutlet weak var blurView         : UIVisualEffectView!
     
+    //Object variables
     var item                            : HasDetails?
     var cellImage                       : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCALayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,16 +44,16 @@ extension DetailsVC {
         backgroundImage.image       = cellImage
         
         if item is RankingItem {
-            pointsOrCountry.text    = "Points :"
+            pointsOrCountry.text    = "Points"
             let rankingItem         = item as! RankingItem
             name.text               = rankingItem.name
             if let ranking          = rankingItem.ranking       { rank.text = String(ranking) }
             if let positionInput    = rankingItem.position      { showPosition(positionInput: positionInput) }
             if let description      = rankingItem.desc          { descriptionLabel.text = description }
-            if let pointsto         = rankingItem.pointsto, let pointsfrom = rankingItem.pointsfrom { points.text = String(pointsfrom) + " -> " + String(pointsto) }
+            if let pointsto         = rankingItem.pointsto { points.text = String(pointsto) }
         }
         else if item is PlayerItem {
-            pointsOrCountry.text    = "Country :"
+            pointsOrCountry.text    = "Country"
             let rankingItem         = item as! PlayerItem
             name.text               = rankingItem.name
             if let ranking          = rankingItem.ranking       { rank.text = String(ranking) }
@@ -78,5 +80,13 @@ extension DetailsVC {
             positionImage.image      = UIImage(named: "neutral")?.withRenderingMode(.alwaysTemplate)
             positionImage.tintColor  = getColor(1,1,1,1)
         }
+    }
+}
+
+extension DetailsVC {
+    
+    /// Sets up the CA Layer
+    func setupCALayer() {
+        blurView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }

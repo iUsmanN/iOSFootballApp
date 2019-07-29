@@ -10,12 +10,13 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell, ImageManager {
     
+    //View variables
     @IBOutlet weak var imagehere    : UIImageView!
     @IBOutlet weak var captionhere  : UILabel!
     
+    //Object variables
     var delegate                    : DoubleTapDelegate?
-    
-    var item: GalleryItem? {
+    var item                        : GalleryItem? {
         didSet {
             setupCell()
         }
@@ -57,5 +58,10 @@ extension GalleryCollectionViewCell {
     func setupCALayer() {
         layer.cornerRadius = 10
         layer.shadowOffset = CGSize(width: 10, height: 10)
+    }
+    
+    /// Used to remove image from cell when reusing
+    override func prepareForReuse() {
+        imagehere.image = nil
     }
 }

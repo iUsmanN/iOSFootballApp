@@ -12,5 +12,6 @@ target 'iOSTrainingProject' do
 	pod 'Firebase/Database'
 	pod 'SwiftLinkPreview', '~> 3.0.1'
 	pod 'youtube-ios-player-helper'
+	pod 'lottie-ios'
 
 end

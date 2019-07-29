@@ -10,7 +10,10 @@ import UIKit
 
 class GalleryViewController: UIViewController {
     
+    //View variables
     @IBOutlet weak var CollectionView   : UICollectionView!
+    
+    //Object variables
     var vm                              : GalleryVM?
     let cellId = "GalleryCell"
     
@@ -26,6 +29,7 @@ class GalleryViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setupCellSize()
     }
 }
@@ -35,7 +39,6 @@ extension GalleryViewController {
     func setupCollectionView() {
         CollectionView.delegate     = self
         CollectionView.dataSource   = self
-        //let nib = UINib(nibName: "GalleryCollectionViewCell", bundle: nil)
         CollectionView.register(TPConstants.Nibs.GALLERY_CVC, forCellWithReuseIdentifier: cellId)
     }
     
@@ -43,15 +46,15 @@ extension GalleryViewController {
     func setupCellSize() {
         let CollectionViewFlowLayout = UICollectionViewFlowLayout()
         let NumberOfRows             = CGFloat(2)
-        let LineSpacing              = CGFloat(5)
-        let InterItemSpacing         = CGFloat(5)
-        let width                    = (CollectionView.frame.width - ((NumberOfRows-1)*LineSpacing))/NumberOfRows
+        let LineSpacing              = CGFloat(2)
+        let InterItemSpacing         = CGFloat(2)
+        let width                    = ((CollectionView.frame.width - ((NumberOfRows-1)*LineSpacing))/NumberOfRows)
         let height                   = width * 1.5
-        CollectionViewFlowLayout.itemSize           = CGSize(width: width, height: height)
-        CollectionViewFlowLayout.sectionInset       = .zero
-        CollectionViewFlowLayout.scrollDirection    = .vertical
-        CollectionViewFlowLayout.minimumLineSpacing = LineSpacing
-        CollectionViewFlowLayout.minimumInteritemSpacing = InterItemSpacing
+        CollectionViewFlowLayout.itemSize                   = CGSize(width: width, height: height)
+        CollectionViewFlowLayout.sectionInset               = .zero
+        CollectionViewFlowLayout.scrollDirection            = .vertical
+        CollectionViewFlowLayout.minimumLineSpacing         = LineSpacing
+        CollectionViewFlowLayout.minimumInteritemSpacing    = InterItemSpacing
         CollectionView.setCollectionViewLayout(CollectionViewFlowLayout, animated: true)
     }
 }
@@ -63,12 +66,25 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
-        cell.item = vm?.galleryItem(at: indexPath)
-        cell.delegate = self
+        cell.item       = vm?.galleryItem(at: indexPath)
+        cell.delegate   = self
         return cell
     }
 }
 
+extension GalleryViewController : UICollectionViewDelegateFlowLayout {
+    
+    //Used to resize collection view cells on orientation change
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var NumberOfRows             = CGFloat(2); if UIDevice.current.orientation.isLandscape { NumberOfRows = CGFloat(3) }
+        let LineSpacing              = CGFloat(2)
+        let width                    = ((CollectionView.frame.width - ((NumberOfRows-1)*LineSpacing))/NumberOfRows)
+        let height                   = width * 1.5
+        
+        return CGSize(width: width, height: height)
+    }
+}
 
 extension GalleryViewController : DoubleTapDelegate {
     func itemDoubleTapped(vc : UIActivityViewController) {

@@ -10,10 +10,12 @@ import UIKit
 
 class CityTVC: UITableViewCell {
 
+    //View variables
     @IBOutlet weak var nameHere         : UILabel!
     @IBOutlet weak var typeHere         : UILabel!
     @IBOutlet weak var latt_longHere    : UILabel!
     
+    //Object variables
     var item                            : CityItem?
     
     override func awakeFromNib() {
