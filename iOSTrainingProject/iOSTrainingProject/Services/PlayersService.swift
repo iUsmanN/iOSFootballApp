@@ -8,18 +8,18 @@
 
 import Foundation
 
-protocol PlayersService : NetworkEngine {
-    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([PlayerItem])->())
-}
+protocol PlayersService : NetworkEngine { }
 
 extension PlayersService {
+    
     /// Gets Players data from the database
     ///
     /// - Parameters:
     ///   - startingIndex: Starting index of query
     ///   - amount: Number of items to be fetched
-    ///   - completion: Closure with query data as parameters
-    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([PlayerItem])->()) {
-        addObserver(for: "Players", startingIndex, amount, completionhandler: completion)
+    ///   - onSuccess: Success Closure
+    ///   - onFailure: Failure Closure
+    func getPlayerData( _ startingIndex: Int, _ amount:Int, onSuccess: @escaping TPConstants.Aliases.playersServiceSuccess, onFailure: @escaping TPConstants.Aliases.playersServiceFailure) {
+        addObserver(for: "Players", startingIndex, amount, onSuccess: onSuccess, onFailure: onFailure)
     }
 }

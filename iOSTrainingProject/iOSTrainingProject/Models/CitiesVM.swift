@@ -9,6 +9,7 @@
 import Foundation
 
 class CitiesVM : NetworkEngine {
+    
     var items: [CityItem]? {
         didSet {
             guard let reloadclosure = reloadclosure else { return }

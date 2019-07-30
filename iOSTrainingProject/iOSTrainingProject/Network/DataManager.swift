@@ -19,10 +19,10 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     
     /// Getting initial data for all tabs
     private init() {
-        getNFData       (0, 4, completion: setNewsFeedItems(_:))
-        getGalleryData  (0, 12, completion: setGalleryItems(_:))
-        getData         (0, 20, completion: setTeamItems(_:))
-        getData         (0, 13, completion: setPlayerItems(_:))
+        getNFData       (0, 4,      onSuccess: setNewsFeedItems(_:),    onFailure: failureGettingData(_:))
+        getGalleryData  (0, 12,     onSuccess: setGalleryItems(_:),     onFailure: failureGettingData(_:))
+        getTeamsData    (0, 20,     onSuccess: setTeamItems(_:),        onFailure: failureGettingData(_:))
+        getPlayerData   (0, 13,     onSuccess: setPlayerItems(_:),      onFailure: failureGettingData(_:))
     }
     
     @discardableResult
@@ -84,5 +84,9 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     /// - Parameter input: Array of initial Player items
     func setPlayerItems(_ input: [PlayerItem]) {
         playerItems = input
+    }
+    
+    func failureGettingData(_ err: Error) {
+        print("Error")
     }
 }

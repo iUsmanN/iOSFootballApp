@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TeamsService : NetworkEngine {
-    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([RankingItem])->())
+    
 }
 
 extension TeamsService {
@@ -19,7 +19,9 @@ extension TeamsService {
     ///   - startingIndex: Starting index of query
     ///   - amount: Number of items to be fetched
     ///   - completion: Closure with query data as parameters
-    func getData( _ startingIndex: Int, _ amount:Int, completion: @escaping ([RankingItem])->()) {
-        addObserver(for: "Teams", startingIndex, amount, completionhandler: completion)
+    ///   - onSuccess: Success Closure
+    ///   - onFailure: Failure Closure
+    func getTeamsData( _ startingIndex: Int, _ amount:Int, onSuccess: @escaping TPConstants.Aliases.teamsServiceSuccess, onFailure: @escaping TPConstants.Aliases.teamsServiceFailure) {
+        addObserver(for: "Teams", startingIndex, amount, onSuccess: onSuccess, onFailure: onFailure)
     }
 }

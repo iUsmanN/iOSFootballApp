@@ -9,7 +9,9 @@ import Foundation
 import Firebase
 
 protocol NetworkEngine {
-    func addObserver<T>(for ItemType: String, _ startingIndex: Int, _ amount:Int, completionhandler: @escaping ([T]) -> ()) where T : Decodable
+    
+    typealias Success<T> = ([T]) -> ()
+    typealias Failure = (Error) -> ()
 }
 
 extension NetworkEngine {
@@ -20,7 +22,7 @@ extension NetworkEngine {
     ///   - startingIndex: Defines the starting index of the database query
     ///   - amount: Defines the number of Items to fetch from the databse
     ///   - completionhandler: A closure with parameter containing the returned values from the database.
-    func addObserver<T>(for ItemType: String, _ startingIndex: Int, _ amount:Int, completionhandler: @escaping ([T]) -> ()) where T : Decodable {
+    func addObserver<T>(for ItemType: String, _ startingIndex: Int, _ amount:Int, onSuccess: @escaping Success<T>, onFailure: @escaping Failure) where T : Decodable {
         let ref = Database.database().reference()
         ref.child(ItemType).queryOrderedByKey().queryStarting(atValue:String(startingIndex)).queryEnding(atValue:String(startingIndex + amount - 1))
             .observeSingleEvent(of: .value) { (datasnap) in
@@ -34,10 +36,11 @@ extension NetworkEngine {
                         items.append(x)
                         print("OK")
                     }
-                    completionhandler(items);
+                    onSuccess(items);
                 } catch {
                     print("ERROR")
                     print(error.localizedDescription)
+                    onFailure(error)
                 }
         }
     }

@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol NewsFeedService : NetworkEngine {
-    func getNFData(_ startingIndex: Int, _ amount:Int, completion:  @escaping ([NewsFeedItem]) -> ())
-}
+protocol NewsFeedService : NetworkEngine { }
 
 extension NewsFeedService {
     
@@ -20,7 +18,9 @@ extension NewsFeedService {
     ///   - startingIndex: Starting index of query
     ///   - amount: Number of items to be fetched
     ///   - completion: Closure with query data as parameters
-    func getNFData(_ startingIndex: Int, _ amount:Int, completion:  @escaping ([NewsFeedItem]) -> ()) {
-        addObserver(for: "NewsFeed", startingIndex, amount, completionhandler: completion)
+    ///   - onSuccess: Success Closure
+    ///   - onFailure: Failure Closure
+    func getNFData(_ startingIndex: Int, _ amount:Int, onSuccess:  @escaping TPConstants.Aliases.newsfeedServiceSuccess, onFailure: @escaping TPConstants.Aliases.newsfeedServiceFailure ) {
+        addObserver(for: "NewsFeed", startingIndex, amount, onSuccess: onSuccess, onFailure: onFailure)
     }
 }

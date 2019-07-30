@@ -60,7 +60,11 @@ class NewsFeedVM : NewsFeedService {
         if items.count < total, indexPath.row - items.count == -1 {
             print("-> Get Data")
             print(String(TPConstants.Pagination.Amount) + ", " + String(total-items.count))
-            getNFData(items.count + 1, min(TPConstants.Pagination.Amount, total-items.count), completion: SetData(_:))
+            getNFData(items.count + 1, min(TPConstants.Pagination.Amount, total-items.count), onSuccess: SetData(_:), onFailure: failureGettingData(_:))
         }
+    }
+    
+    func failureGettingData(_ err: Error) {
+        
     }
 }

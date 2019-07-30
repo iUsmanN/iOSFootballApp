@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol GalleryService : NetworkEngine {
-    func getGalleryData(_ startingIndex: Int, _ amount:Int, completion: @escaping ([GalleryItem]) -> ())
-}
+protocol GalleryService : NetworkEngine { }
 
 extension GalleryService {
     /// Gets Gallery data from the database
@@ -19,7 +17,9 @@ extension GalleryService {
     ///   - startingIndex: Starting index of query
     ///   - amount: Number of items to be fetched
     ///   - completion: Closure with query data as parameters
-    func getGalleryData(_ startingIndex: Int, _ amount:Int, completion: @escaping ([GalleryItem]) -> ()) {
-        addObserver(for: "Gallery", startingIndex, amount, completionhandler: completion)
+    ///   - onSuccess: Success Closure
+    ///   - onFailure: Failure Closure
+    func getGalleryData(_ startingIndex: Int, _ amount:Int, onSuccess: @escaping TPConstants.Aliases.galleryServiceSuccess , onFailure: @escaping TPConstants.Aliases.galleryServiceFailure) {
+        addObserver(for: "Gallery", startingIndex, amount, onSuccess: onSuccess, onFailure: onFailure)
     }
 }

@@ -25,4 +25,20 @@ struct TPConstants {
         private init() { }
         static let Amount       = 5
     }
+    
+    struct Aliases {
+        private init() { }
+        
+        typealias newsfeedServiceFailure = (Error) -> ()
+        typealias newsfeedServiceSuccess = ([NewsFeedItem]) -> ()
+        
+        typealias galleryServiceSuccess = ([GalleryItem])->()
+        typealias galleryServiceFailure = (Error) -> ()
+        
+        typealias teamsServiceSuccess = ([RankingItem])->()
+        typealias teamsServiceFailure = (Error) -> ()
+        
+        typealias playersServiceSuccess = ([PlayerItem])->()
+        typealias playersServiceFailure = (Error) -> ()
+    }
 }

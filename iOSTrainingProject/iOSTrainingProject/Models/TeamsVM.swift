@@ -9,6 +9,7 @@
 import Foundation
 
 class TeamsVM : TeamsService {
+    
     let total: Int  = 20
     var items       = [RankingItem]() {
         didSet {
@@ -60,7 +61,11 @@ class TeamsVM : TeamsService {
         
         if (items.count - indexPath.row == 2) {
             print("Getting data")
-            getData(items.count, min(total - items.count, 3), completion: setData(_:))
+            getTeamsData(items.count, min(total - items.count, 3), onSuccess: setData(_:), onFailure: failureGettingData(_:))
         }
+    }
+    
+    func failureGettingData(_ err: Error) {
+        
     }
 }
