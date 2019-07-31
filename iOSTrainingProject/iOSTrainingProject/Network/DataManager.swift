@@ -88,5 +88,6 @@ class DataManager : NewsFeedService, GalleryService, TeamsService, PlayersServic
     
     func failureGettingData(_ err: Error) {
         print("Error")
+        print(err.localizedDescription)
     }
 }

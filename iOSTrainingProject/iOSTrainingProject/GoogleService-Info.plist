@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1025473489766-43l2r0lt9jkuan0jgfpmduo08odsqeel.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1025473489766-43l2r0lt9jkuan0jgfpmduo08odsqeel</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA8Z-KVTEsol_Yy3u2wM1Jk3d_kl-FZjJI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1025473489766</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.iOSTrainingProject</string>
+	<key>PROJECT_ID</key>
+	<string>iostrainingproject</string>
+	<key>STORAGE_BUCKET</key>
+	<string>iostrainingproject.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1025473489766:ios:1dd357abb96a9d68</string>
+	<key>DATABASE_URL</key>
+	<string>https://iostrainingproject.firebaseio.com</string>
+</dict>
+</plist>

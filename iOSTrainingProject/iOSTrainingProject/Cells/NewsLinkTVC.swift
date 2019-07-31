@@ -40,7 +40,20 @@ class NewsLinkTVC: UITableViewCell, ImageManager {
         if let stringUrl = item?.url {
             swiftLinkPreviewObj.preview(stringUrl, onSuccess: LinkPreviewSuccess(response:), onError: LinkPreviewFailure(error:))
         }
-        titleHere.text = item?.title
+        
+        guard let item = item else { return }
+        guard let url = item.url else { return }
+        LinkCache.shared.loadLink(url: url, type: .title) { s in
+            self.titleHere.text = s
+        }
+        
+        LinkCache.shared.loadLink(url: url, type: .image) { s in
+            
+            guard let s = s else { return }
+            ImageCache.shared.loadImage(s, completion: { image in
+                self.imageHere.image = image
+            })
+        }
     }
     
     func LinkPreviewSuccess(response: Response) {

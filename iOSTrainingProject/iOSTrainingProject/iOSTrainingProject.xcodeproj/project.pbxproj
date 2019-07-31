@@ -13,7 +13,8 @@
 		4A45254722DC59EF00A6F381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A45254622DC59EF00A6F381 /* Assets.xcassets */; };
 		4A45254A22DC59EF00A6F381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A45254822DC59EF00A6F381 /* LaunchScreen.storyboard */; };
 		4A45255522DC59EF00A6F381 /* iOSTrainingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45255422DC59EF00A6F381 /* iOSTrainingProjectTests.swift */; };
-		4A82D8C222DC8F0800056949 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A82D8C122DC8F0800056949 /* GoogleService-Info.plist */; };
+		4A7A781422F02AD600475499 /* LinkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A781322F02AD600475499 /* LinkCache.swift */; };
+		4A7A781F22F1BA2100475499 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A781E22F1BA2100475499 /* GoogleService-Info.plist */; };
 		4A82D8C522DC99D200056949 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8C422DC99D200056949 /* NetworkLayer.swift */; };
 		4A82D8C822DC9A1600056949 /* Network Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8C722DC9A1600056949 /* Network Protocols.swift */; };
 		4A82D8CB22DC9AE000056949 /* NewsFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82D8CA22DC9AE000056949 /* NewsFeedItem.swift */; };
@@ -86,7 +87,8 @@
 		4A45255022DC59EF00A6F381 /* iOSTrainingProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTrainingProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A45255422DC59EF00A6F381 /* iOSTrainingProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTrainingProjectTests.swift; sourceTree = "<group>"; };
 		4A45255622DC59EF00A6F381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A82D8C122DC8F0800056949 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A7A781322F02AD600475499 /* LinkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCache.swift; sourceTree = "<group>"; };
+		4A7A781E22F1BA2100475499 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A82D8C422DC99D200056949 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		4A82D8C722DC9A1600056949 /* Network Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Protocols.swift"; sourceTree = "<group>"; };
 		4A82D8CA22DC9AE000056949 /* NewsFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedItem.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				4A82D8C622DC99FB00056949 /* Protocols */,
 				4A82D8C322DC978500056949 /* Models */,
 				4A45253E22DC59EE00A6F381 /* iOSTrainingProject */,
+				4A7A781E22F1BA2100475499 /* GoogleService-Info.plist */,
 				4A45255322DC59EF00A6F381 /* iOSTrainingProjectTests */,
 				4A45253D22DC59EE00A6F381 /* Products */,
 				D97CB9FC9A55401932DE42D8 /* Pods */,
@@ -198,7 +201,6 @@
 				4A45254622DC59EF00A6F381 /* Assets.xcassets */,
 				4A45254822DC59EF00A6F381 /* LaunchScreen.storyboard */,
 				4A45254B22DC59EF00A6F381 /* Info.plist */,
-				4A82D8C122DC8F0800056949 /* GoogleService-Info.plist */,
 				4A82D8F522E1E97100056949 /* Splash.storyboard */,
 				4A82D92822EAC8ED00056949 /* TPConstants.swift */,
 			);
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				4A82D92622E9881F00056949 /* ImageCache.swift */,
+				4A7A781322F02AD600475499 /* LinkCache.swift */,
 			);
 			path = Caching;
 			sourceTree = "<group>";
@@ -425,11 +428,11 @@
 				4A82D91022E6E37A00056949 /* NewsLinkTVC.xib in Resources */,
 				4A45254A22DC59EF00A6F381 /* LaunchScreen.storyboard in Resources */,
 				4A82D90C22E5D71A00056949 /* FactTVC.xib in Resources */,
-				4A82D8C222DC8F0800056949 /* GoogleService-Info.plist in Resources */,
 				4A82D99522ED988B00056949 /* 1803-continuous-wave-loader.json in Resources */,
 				4A45254722DC59EF00A6F381 /* Assets.xcassets in Resources */,
 				4A82D91622E70EFE00056949 /* VideoTVC.xib in Resources */,
 				4A82D8E522DEF45300056949 /* GalleryCVC.xib in Resources */,
+				4A7A781F22F1BA2100475499 /* GoogleService-Info.plist in Resources */,
 				4A45254522DC59EE00A6F381 /* Main.storyboard in Resources */,
 				4A82D8F622E1E97100056949 /* Splash.storyboard in Resources */,
 			);
@@ -512,6 +515,7 @@
 				4A82D8EF22DF402D00056949 /* TeamsService.swift in Sources */,
 				4A82D92022E8795400056949 /* CitiesVM.swift in Sources */,
 				4A82D90822E5BDD200056949 /* SplashVC.swift in Sources */,
+				4A7A781422F02AD600475499 /* LinkCache.swift in Sources */,
 				4A82D8D122DCE15F00056949 /* MainTabBarController.swift in Sources */,
 				4A82D90022E4A29C00056949 /* PlayersService.swift in Sources */,
 				4A82D8DD22DDEAE200056949 /* GalleryVM.swift in Sources */,
